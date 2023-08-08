@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class SprintViewController: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
