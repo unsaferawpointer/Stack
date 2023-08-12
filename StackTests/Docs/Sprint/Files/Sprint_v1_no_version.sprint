@@ -1,0 +1,65 @@
+{
+	"content" : {
+		"id" : "644E7052-D1EB-474B-875B-D354F41E8CAF",
+		"columns" : [
+			{
+				"id" : "73F84672-9398-4638-A676-BF65F5155D0B",
+				"title" : "Backlog",
+				"cards" : [
+					{
+						"isUrgent" : false,
+						"id" : "F59AB097-7B8C-4B09-BFA9-DD075BC543D1",
+						"estimation" : 0,
+						"tag" : null,
+						"text" : "card0"
+					},
+					{
+						"isUrgent" : false,
+						"id" : "F19F1EB8-0C9F-4B16-97F0-CB3BE864637D",
+						"estimation" : 13,
+						"tag" : null,
+						"text" : "card1"
+					},
+					{
+						"isUrgent" : true,
+						"id" : "6B4D75CF-97D5-48CD-B664-7A048A4C0AB6",
+						"estimation" : 7,
+						"tag" : "tag2",
+						"text" : "card2"
+					}
+				]
+			},
+			{
+				"id" : "498EDB3D-7ED3-429F-80B2-46AB9E6F467F",
+				"title" : "In Progress",
+				"cards" : [
+					{
+						"isUrgent" : false,
+						"id" : "E4B21AF6-3360-4899-8258-2C527557303B",
+						"estimation" : 0,
+						"tag" : null,
+						"text" : "card0"
+					}
+				]
+			},
+			{
+				"id" : "6CD7E750-DF6E-45F5-975C-CDA57C17845B",
+				"title" : "Done",
+				"cards" : [
+					{
+						"isUrgent" : false,
+						"id" : "8E20B76D-670A-4CCC-994B-E4BA178B98F5",
+						"estimation" : 0,
+						"tag" : null,
+						"text" : "card0"
+					}
+				]
+			}
+		],
+		"period" : {
+			"start" : 0,
+			"end" : 100
+		},
+		"velocity" : 7
+	}
+}

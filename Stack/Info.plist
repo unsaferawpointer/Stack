@@ -16,7 +16,7 @@
 				<string>com.paperwave.Stack.sprint</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).Document</string>
+			<string>$(PRODUCT_MODULE_NAME).SprintDocument</string>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
