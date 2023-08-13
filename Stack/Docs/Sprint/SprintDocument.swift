@@ -26,6 +26,7 @@ class SprintDocument: NSDocument {
 		let windowController = storyboard.instantiateController(
 			withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")
 		) as! NSWindowController
+		windowController.window?.contentViewController = SprintViewController()
 		self.addWindowController(windowController)
 	}
 

@@ -223,6 +223,7 @@
 				4C0C5C372A87820F0025B3C8 /* Services */,
 				4C0C5C2D2A877E660025B3C8 /* Models */,
 				4C0588192A82BEE300078733 /* Docs */,
+				4CA2A3312A892A58005D1C45 /* UserInterface */,
 				4C0C5C522A88202A0025B3C8 /* Resource */,
 			);
 			path = Stack;
@@ -243,6 +244,13 @@
 				4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */,
 			);
 			path = StackUITests;
+			sourceTree = "<group>";
+		};
+		4CA2A3312A892A58005D1C45 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
