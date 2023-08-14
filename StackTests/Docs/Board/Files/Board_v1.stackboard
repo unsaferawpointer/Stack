@@ -8,21 +8,21 @@
 				"title" : "Backlog",
 				"cards" : [
 					{
-						"isUrgent" : false,
+						"category" : 1,
 						"id" : "F59AB097-7B8C-4B09-BFA9-DD075BC543D1",
 						"estimation" : 0,
 						"tag" : null,
 						"text" : "card0"
 					},
 					{
-						"isUrgent" : false,
+						"category" : 0,
 						"id" : "F19F1EB8-0C9F-4B16-97F0-CB3BE864637D",
 						"estimation" : 13,
 						"tag" : null,
 						"text" : "card1"
 					},
 					{
-						"isUrgent" : true,
+						"category" : 1,
 						"id" : "6B4D75CF-97D5-48CD-B664-7A048A4C0AB6",
 						"estimation" : 7,
 						"tag" : "tag2",
@@ -35,7 +35,7 @@
 				"title" : "In Progress",
 				"cards" : [
 					{
-						"isUrgent" : false,
+						"category" : 0,
 						"id" : "E4B21AF6-3360-4899-8258-2C527557303B",
 						"estimation" : 0,
 						"tag" : null,
@@ -48,7 +48,7 @@
 				"title" : "Done",
 				"cards" : [
 					{
-						"isUrgent" : false,
+						"category" : 0,
 						"id" : "8E20B76D-670A-4CCC-994B-E4BA178B98F5",
 						"estimation" : 0,
 						"tag" : null,

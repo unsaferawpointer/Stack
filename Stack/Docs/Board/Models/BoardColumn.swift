@@ -1,5 +1,5 @@
 //
-//  Column.swift
+//  BoardColumn.swift
 //  Stack
 //
 //  Created by Anton Cherkasov on 12.08.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Column model
-struct Column {
+struct BoardColumn {
 
 	/// Column identifier
 	let id: UUID
@@ -39,7 +39,7 @@ struct Column {
 }
 
 // MARK: - Codable
-extension Column: Codable {
+extension BoardColumn: Codable {
 
 	enum CodingKeys: CodingKey {
 		case id
@@ -64,7 +64,7 @@ extension Column: Codable {
 }
 
 // MARK: - Identifiable
-extension Column: Identifiable { }
+extension BoardColumn: Identifiable { }
 
 // MARK: - Equatable
-extension Column: Equatable { }
+extension BoardColumn: Equatable { }

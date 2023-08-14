@@ -1,5 +1,5 @@
 //
-//  SprintDataProvider.swift
+//  BoardDataProvider.swift
 //  Stack
 //
 //  Created by Anton Cherkasov on 12.08.2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// Data provider of sprint document
-final class SprintDataProvider {
+/// Data provider of board document
+final class BoardDataProvider {
 
 	let lastVersion: Version = .v1
 
@@ -25,26 +25,26 @@ final class SprintDataProvider {
 		return encoder
 	}()
 
-	/// Content of sprint document
-	var content: SprintContent
+	/// Content of board document
+	var content: BoardContent
 
 	// MARK: - Initialization
 
 	/// Basic initialization
 	///
 	/// - Parameters:
-	///    - content: Content of sprint document
-	init(content: SprintContent) {
+	///    - content: Content of board document
+	init(content: BoardContent) {
 		self.content = content
 	}
 }
 
 // MARK: - DataProvider
-extension SprintDataProvider: DataProvider {
+extension BoardDataProvider: DataProvider {
 
 	func data(ofType typeName: String) throws -> Data {
 		switch typeName.lowercased() {
-		case "com.paperwave.stack.sprint":
+		case "com.paperwave.stack.board":
 			let file = DocumentFile(version: lastVersion.rawValue, content: content)
 			return try encoder.encode(file)
 		default:
@@ -54,7 +54,7 @@ extension SprintDataProvider: DataProvider {
 
 	func read(from data: Data, ofType typeName: String) throws {
 		switch typeName.lowercased() {
-		case "com.paperwave.stack.sprint":
+		case "com.paperwave.stack.board":
 			try migrate(data)
 		default:
 			throw DocumentError.unexpectedFormat
@@ -63,7 +63,7 @@ extension SprintDataProvider: DataProvider {
 }
 
 // MARK: - Helpers
-private extension SprintDataProvider {
+private extension BoardDataProvider {
 
 	func migrate(_ data: Data) throws {
 		guard let versionedFile = try? decoder.decode(VersionedFile.self, from: data) else {
@@ -72,7 +72,7 @@ private extension SprintDataProvider {
 		guard let version = Version(rawValue: versionedFile.version), version == lastVersion else {
 			throw DocumentError.unknownVersion
 		}
-		guard let file = try? decoder.decode(DocumentFile<SprintContent>.self, from: data) else {
+		guard let file = try? decoder.decode(DocumentFile<BoardContent>.self, from: data) else {
 			throw DocumentError.unexpectedFormat
 		}
 		self.content = file.content
@@ -80,7 +80,7 @@ private extension SprintDataProvider {
 }
 
 // MARK: - Nested data structs
-extension SprintDataProvider {
+extension BoardDataProvider {
 
 	enum Version: String {
 		case v1

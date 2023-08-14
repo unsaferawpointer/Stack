@@ -1,5 +1,5 @@
 //
-//  SprintContent.swift
+//  BoardContent.swift
 //  Stack
 //
 //  Created by Anton Cherkasov on 12.08.2023.
@@ -8,19 +8,19 @@
 import Foundation
 import UniformTypeIdentifiers
 
-struct SprintContent {
+struct BoardContent {
 
-	/// Sprint identifier
+	/// Board identifier
 	var id: UUID
 
 	/// Sprint period
 	var period: Period
 
-	/// Velocity in story points
+	/// Sprint velocity in story points
 	var velocity: Int
 
 	/// Board column
-	var columns: [Column]
+	var columns: [BoardColumn]
 
 	// MARK: - Initialization
 
@@ -35,7 +35,7 @@ struct SprintContent {
 		id: UUID = UUID(),
 		period: Period,
 		velocity: Int = 0,
-		columns: [Column] = []
+		columns: [BoardColumn] = []
 	) {
 		self.id = id
 		self.period = period
@@ -45,15 +45,15 @@ struct SprintContent {
 }
 
 // MARK: - Codable
-extension SprintContent: Codable { }
+extension BoardContent: Codable { }
 
 // MARK: - Equatable
-extension SprintContent: Equatable { }
+extension BoardContent: Equatable { }
 
 // MARK: - Helpers
-extension SprintContent {
+extension BoardContent {
 
-	static var empty: SprintContent {
+	static var empty: BoardContent {
 		let period = Period(start: .now, end: .now)
 		return .init(period: period, velocity: 0)
 	}

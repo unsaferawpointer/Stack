@@ -1,5 +1,5 @@
 //
-//  SprintDocument.swift
+//  BoardDocument.swift
 //  Stack
 //
 //  Created by Anton Cherkasov on 08.08.2023.
@@ -7,12 +7,12 @@
 
 import Cocoa
 
-class SprintDocument: NSDocument {
+class BoardDocument: NSDocument {
 
-	var provider: SprintDataProvider
+	var provider: BoardDataProvider
 
 	override init() {
-		self.provider = SprintDataProvider(content: .empty)
+		self.provider = BoardDataProvider(content: .empty)
 		super.init()
 	}
 
@@ -26,7 +26,7 @@ class SprintDocument: NSDocument {
 		let windowController = storyboard.instantiateController(
 			withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")
 		) as! NSWindowController
-		windowController.window?.contentViewController = SprintViewController()
+		windowController.window?.contentViewController = BoardViewController()
 		self.addWindowController(windowController)
 	}
 

@@ -15,7 +15,7 @@ struct Card {
 
 	var tag: String?
 
-	var isUrgent: Bool
+	var category: Category
 
 	var estimation: Int
 
@@ -23,13 +23,13 @@ struct Card {
 		id: UUID = UUID(),
 		text: String,
 		tag: String? = nil,
-		isUrgent: Bool = false,
+		category: Category = [],
 		estimation: Int = 0
 	) {
 		self.id = id
 		self.text = text
 		self.tag = tag
-		self.isUrgent = isUrgent
+		self.category = category
 		self.estimation = estimation
 	}
 }
@@ -41,7 +41,7 @@ extension Card: Codable {
 		case id
 		case text
 		case tag
-		case isUrgent
+		case category
 		case estimation
 	}
 
@@ -52,9 +52,9 @@ extension Card: Codable {
 		let id = try container.decode(UUID.self, forKey: .id)
 		let text = try container.decode(String.self, forKey: .text)
 		let tag = try container.decodeIfPresent(String.self, forKey: .tag)
-		let isUrgent = try container.decode(Bool.self, forKey: .isUrgent)
+		let category = try container.decode(Category.self, forKey: .category)
 		let estimation = try container.decode(Int.self, forKey: .estimation)
-		self.init(id: id, text: text, tag: tag, isUrgent: isUrgent, estimation: estimation)
+		self.init(id: id, text: text, tag: tag, category: category, estimation: estimation)
 	}
 
 	func encode(to encoder: Encoder) throws {
@@ -64,7 +64,7 @@ extension Card: Codable {
 		try container.encode(id, forKey: .id)
 		try container.encode(text, forKey: .text)
 		try container.encode(tag, forKey: .tag)
-		try container.encode(isUrgent, forKey: .isUrgent)
+		try container.encode(category, forKey: .category)
 		try container.encode(estimation, forKey: .estimation)
 	}
 }

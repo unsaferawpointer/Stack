@@ -6,17 +6,17 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Sprint document</string>
+			<string>Board document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.paperwave.Stack.sprint</string>
+				<string>com.paperwave.Stack.board</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).SprintDocument</string>
+			<string>$(PRODUCT_MODULE_NAME).BoardDocument</string>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
@@ -27,16 +27,16 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Sprint</string>
+			<string>Board</string>
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.paperwave.Stack.sprint</string>
+			<string>com.paperwave.Stack.board</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>sprint</string>
+					<string>stackboard</string>
 				</array>
 			</dict>
 		</dict>

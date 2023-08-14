@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class SprintViewController: NSViewController {
+class BoardViewController: NSViewController {
 
 	// MARK: - Life-cycle
 
