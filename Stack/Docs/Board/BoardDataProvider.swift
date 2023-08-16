@@ -10,52 +10,32 @@ import Foundation
 /// Data provider of board document
 final class BoardDataProvider {
 
+	/// Last supported version
 	let lastVersion: Version = .v1
-
-	lazy var decoder: JSONDecoder = {
-		let decoder = JSONDecoder()
-		decoder.dateDecodingStrategy = .secondsSince1970
-		return decoder
-	}()
-
-	lazy var encoder: JSONEncoder = {
-		let encoder = JSONEncoder()
-		encoder.outputFormatting = .prettyPrinted
-		encoder.dateEncodingStrategy = .secondsSince1970
-		return encoder
-	}()
-
-	/// Content of board document
-	var content: BoardContent
-
-	// MARK: - Initialization
-
-	/// Basic initialization
-	///
-	/// - Parameters:
-	///    - content: Content of board document
-	init(content: BoardContent) {
-		self.content = content
-	}
 }
 
-// MARK: - DataProvider
-extension BoardDataProvider: DataProvider {
+// MARK: - ContentProvider
+extension BoardDataProvider: ContentProvider {
 
-	func data(ofType typeName: String) throws -> Data {
+	typealias Content = BoardContent
+
+	func data(ofType typeName: String, content: Content) throws -> Data {
 		switch typeName.lowercased() {
 		case "com.paperwave.stack.board":
 			let file = DocumentFile(version: lastVersion.rawValue, content: content)
+			let encoder = JSONEncoder()
+			encoder.outputFormatting = .prettyPrinted
+			encoder.dateEncodingStrategy = .secondsSince1970
 			return try encoder.encode(file)
 		default:
 			throw DocumentError.unexpectedFormat
 		}
 	}
 
-	func read(from data: Data, ofType typeName: String) throws {
+	func read(from data: Data, ofType typeName: String) throws -> Content {
 		switch typeName.lowercased() {
 		case "com.paperwave.stack.board":
-			try migrate(data)
+			return try migrate(data)
 		default:
 			throw DocumentError.unexpectedFormat
 		}
@@ -65,7 +45,11 @@ extension BoardDataProvider: DataProvider {
 // MARK: - Helpers
 private extension BoardDataProvider {
 
-	func migrate(_ data: Data) throws {
+	func migrate(_ data: Data) throws -> Content {
+
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .secondsSince1970
+
 		guard let versionedFile = try? decoder.decode(VersionedFile.self, from: data) else {
 			throw DocumentError.unexpectedFormat
 		}
@@ -75,13 +59,14 @@ private extension BoardDataProvider {
 		guard let file = try? decoder.decode(DocumentFile<BoardContent>.self, from: data) else {
 			throw DocumentError.unexpectedFormat
 		}
-		self.content = file.content
+		return file.content
 	}
 }
 
 // MARK: - Nested data structs
 extension BoardDataProvider {
 
+	/// Version of a document file
 	enum Version: String {
 		case v1
 	}

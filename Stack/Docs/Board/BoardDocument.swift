@@ -9,10 +9,13 @@ import Cocoa
 
 class BoardDocument: NSDocument {
 
-	var provider: BoardDataProvider
+	var storage: DocumentStorage<BoardContent>
 
 	override init() {
-		self.provider = BoardDataProvider(content: .empty)
+		self.storage = DocumentStorage<BoardContent>(
+			initialState: .initial,
+			provider: BoardDataProvider()
+		)
 		super.init()
 	}
 
@@ -31,11 +34,11 @@ class BoardDocument: NSDocument {
 	}
 
 	override func data(ofType typeName: String) throws -> Data {
-		return try provider.data(ofType: typeName)
+		return try storage.data(ofType: typeName)
 	}
 
 	override func read(from data: Data, ofType typeName: String) throws {
-		try provider.read(from: data, ofType: typeName)
+		try storage.read(from: data, ofType: typeName)
 	}
 
 }

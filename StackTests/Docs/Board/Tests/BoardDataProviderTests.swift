@@ -13,7 +13,7 @@ final class BoardDataProviderTests: XCTestCase {
 	var sut: BoardDataProvider!
 
 	override func setUpWithError() throws {
-		sut = BoardDataProvider(content: .empty)
+		sut = BoardDataProvider()
 	}
 
 	override func tearDownWithError() throws {
@@ -21,7 +21,7 @@ final class BoardDataProviderTests: XCTestCase {
 	}
 }
 
-// MARK: - DataProvider test-cases
+// MARK: - ContentProvider test-cases
 extension BoardDataProviderTests {
 
 	func test_read() throws {
@@ -29,10 +29,22 @@ extension BoardDataProviderTests {
 		let data = try loadFile(withName: "Board_v1")
 
 		// Act
-		try sut.read(from: data, ofType: "com.paperwave.Stack.board")
+		let result = try sut.read(from: data, ofType: "com.paperwave.Stack.board")
 
 		// Assert
-		XCTAssertEqual(sut.content, expected)
+		XCTAssertEqual(result, expected)
+	}
+
+	func test_read_whenFileContainsMinimumRequiredProperties() throws {
+		// Arrange
+		let data = try loadFile(withName: "Board_v1_minimum")
+		let expected = BoardContent(id: try XCTUnwrap(UUID(uuidString: "644E7052-D1EB-474B-875B-D354F41E8CAF")))
+
+		// Act
+		let result = try sut.read(from: data, ofType: "com.paperwave.Stack.board")
+
+		// Assert
+		XCTAssertEqual(result, expected)
 	}
 
 	func test_read_whenFormatIsInvalid() throws {
@@ -66,11 +78,8 @@ extension BoardDataProviderTests {
 	}
 
 	func test_data() throws {
-		// Arrange
-		sut.content = expected
-
 		// Act
-		let result = try sut.data(ofType: "com.paperwave.Stack.board")
+		let result = try sut.data(ofType: "com.paperwave.Stack.board", content: expected)
 
 		// Assert
 		let encoder = JSONEncoder()

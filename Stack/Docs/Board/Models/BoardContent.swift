@@ -11,16 +11,16 @@ import UniformTypeIdentifiers
 struct BoardContent {
 
 	/// Board identifier
-	var id: UUID
+	private(set) var id: UUID
 
 	/// Sprint period
-	var period: Period
+	private(set) var period: Period?
 
 	/// Sprint velocity in story points
-	var velocity: Int
+	private(set) var velocity: Int?
 
 	/// Board column
-	var columns: [BoardColumn]
+	private(set) var columns: [BoardColumn]
 
 	// MARK: - Initialization
 
@@ -33,8 +33,8 @@ struct BoardContent {
 	///    - columns: Board columns
 	init(
 		id: UUID = UUID(),
-		period: Period,
-		velocity: Int = 0,
+		period: Period? = nil,
+		velocity: Int? = nil,
 		columns: [BoardColumn] = []
 	) {
 		self.id = id
@@ -53,8 +53,7 @@ extension BoardContent: Equatable { }
 // MARK: - Helpers
 extension BoardContent {
 
-	static var empty: BoardContent {
-		let period = Period(start: .now, end: .now)
-		return .init(period: period, velocity: 0)
+	static var initial: BoardContent {
+		return .init()
 	}
 }
