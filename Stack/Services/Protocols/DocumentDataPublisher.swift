@@ -7,9 +7,11 @@
 
 import Foundation
 
-protocol DocumentDataPublisher {
+protocol DocumentDataPublisher<State> {
 
 	associatedtype State
+
+	var state: State { get }
 
 	func modificate(_ block: (inout State) -> Void)
 

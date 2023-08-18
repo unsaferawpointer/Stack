@@ -29,6 +29,22 @@
 		4C0C5C4F2A87F6BC0025B3C8 /* Board_v1.stackboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C5C4E2A87F6BC0025B3C8 /* Board_v1.stackboard */; };
 		4C0C5C512A881FCE0025B3C8 /* DocumentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C5C502A881FCE0025B3C8 /* DocumentError.swift */; };
 		4C0C5C562A88215B0025B3C8 /* Board_v1_broken.stackboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C5C552A88215B0025B3C8 /* Board_v1_broken.stackboard */; };
+		4C1D14942A8D5514005691BD /* BoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14932A8D5514005691BD /* BoardPresenter.swift */; };
+		4C1D14962A8D552D005691BD /* BoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14952A8D552D005691BD /* BoardInteractor.swift */; };
+		4C1D14982A8EA57E005691BD /* BoardUnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14972A8EA57E005691BD /* BoardUnitModel.swift */; };
+		4C1D149A2A8EA704005691BD /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14992A8EA704005691BD /* ViewState.swift */; };
+		4C1D149D2A8EAFFD005691BD /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 4C1D149C2A8EAFFD005691BD /* DesignSystem */; };
+		4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A22A8EB63B005691BD /* ColumnView.swift */; };
+		4C1D14A52A8EB64A005691BD /* ColumnConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A42A8EB64A005691BD /* ColumnConfiguration.swift */; };
+		4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */; };
+		4C1D14AC2A8EB9BE005691BD /* NSTextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */; };
+		4C1D14AE2A8F459F005691BD /* BoardUnitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */; };
+		4C1D14B02A8FCA38005691BD /* BoardPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AF2A8FCA38005691BD /* BoardPresenterTests.swift */; };
+		4C1D14B32A8FCAFC005691BD /* BoardInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14B22A8FCAFC005691BD /* BoardInteractorMock.swift */; };
+		4C1D14B52A8FE5ED005691BD /* BoardViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14B42A8FE5ED005691BD /* BoardViewMock.swift */; };
+		4C1D14B72A8FEE94005691BD /* BoardInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14B62A8FEE94005691BD /* BoardInteractorTests.swift */; };
+		4C1D14B92A8FEEFF005691BD /* BoardPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14B82A8FEEFF005691BD /* BoardPresenterMock.swift */; };
+		4C1D14BB2A8FF07A005691BD /* BoardDataPublisherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14BA2A8FF07A005691BD /* BoardDataPublisherMock.swift */; };
 		4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644BE2A82B42C00184C1B /* AppDelegate.swift */; };
 		4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C02A82B42C00184C1B /* BoardViewController.swift */; };
 		4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C22A82B42C00184C1B /* BoardDocument.swift */; };
@@ -79,6 +95,21 @@
 		4C0C5C4E2A87F6BC0025B3C8 /* Board_v1.stackboard */ = {isa = PBXFileReference; lastKnownFileType = text; path = Board_v1.stackboard; sourceTree = "<group>"; };
 		4C0C5C502A881FCE0025B3C8 /* DocumentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentError.swift; sourceTree = "<group>"; };
 		4C0C5C552A88215B0025B3C8 /* Board_v1_broken.stackboard */ = {isa = PBXFileReference; lastKnownFileType = text; path = Board_v1_broken.stackboard; sourceTree = "<group>"; };
+		4C1D14932A8D5514005691BD /* BoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPresenter.swift; sourceTree = "<group>"; };
+		4C1D14952A8D552D005691BD /* BoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInteractor.swift; sourceTree = "<group>"; };
+		4C1D14972A8EA57E005691BD /* BoardUnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnitModel.swift; sourceTree = "<group>"; };
+		4C1D14992A8EA704005691BD /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		4C1D14A22A8EB63B005691BD /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
+		4C1D14A42A8EB64A005691BD /* ColumnConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnConfiguration.swift; sourceTree = "<group>"; };
+		4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
+		4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extension.swift"; sourceTree = "<group>"; };
+		4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnitAssembly.swift; sourceTree = "<group>"; };
+		4C1D14AF2A8FCA38005691BD /* BoardPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPresenterTests.swift; sourceTree = "<group>"; };
+		4C1D14B22A8FCAFC005691BD /* BoardInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInteractorMock.swift; sourceTree = "<group>"; };
+		4C1D14B42A8FE5ED005691BD /* BoardViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewMock.swift; sourceTree = "<group>"; };
+		4C1D14B62A8FEE94005691BD /* BoardInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInteractorTests.swift; sourceTree = "<group>"; };
+		4C1D14B82A8FEEFF005691BD /* BoardPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPresenterMock.swift; sourceTree = "<group>"; };
+		4C1D14BA2A8FF07A005691BD /* BoardDataPublisherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDataPublisherMock.swift; sourceTree = "<group>"; };
 		4C8644BB2A82B42C00184C1B /* Stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8644BE2A82B42C00184C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8644C02A82B42C00184C1B /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1D149D2A8EAFFD005691BD /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +154,11 @@
 		4C0588182A82BEB900078733 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				4C1D14922A8D54EE005691BD /* Unit */,
+				4C1D14A12A8EB622005691BD /* Views */,
 				4C05C1442A8A866300AF6036 /* Models */,
 				4C0C5C462A87CFA70025B3C8 /* BoardDataProvider.swift */,
 				4C8644C22A82B42C00184C1B /* BoardDocument.swift */,
-				4C8644C02A82B42C00184C1B /* BoardViewController.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -236,6 +269,7 @@
 		4C0C5C492A87F3DD0025B3C8 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				4C1D14B12A8FCAEA005691BD /* Mocks */,
 				4C0C5C4D2A87F42C0025B3C8 /* Tests */,
 				4C0C5C4C2A87F4150025B3C8 /* Files */,
 			);
@@ -254,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				4C0C5C4A2A87F40C0025B3C8 /* BoardDataProviderTests.swift */,
+				4C1D14AF2A8FCA38005691BD /* BoardPresenterTests.swift */,
+				4C1D14B62A8FEE94005691BD /* BoardInteractorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -265,6 +301,63 @@
 				4C8644C62A82B42D00184C1B /* Main.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		4C1D14922A8D54EE005691BD /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */,
+				4C8644C02A82B42C00184C1B /* BoardViewController.swift */,
+				4C1D14932A8D5514005691BD /* BoardPresenter.swift */,
+				4C1D14952A8D552D005691BD /* BoardInteractor.swift */,
+				4C1D14972A8EA57E005691BD /* BoardUnitModel.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		4C1D14A12A8EB622005691BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14A92A8EB74F005691BD /* ColumnHeader */,
+				4C1D14A82A8EB73E005691BD /* ColumnView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C1D14A82A8EB73E005691BD /* ColumnView */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14A22A8EB63B005691BD /* ColumnView.swift */,
+				4C1D14A42A8EB64A005691BD /* ColumnConfiguration.swift */,
+			);
+			path = ColumnView;
+			sourceTree = "<group>";
+		};
+		4C1D14A92A8EB74F005691BD /* ColumnHeader */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */,
+			);
+			path = ColumnHeader;
+			sourceTree = "<group>";
+		};
+		4C1D14AA2A8EB9A8005691BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4C1D14B12A8FCAEA005691BD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4C1D14B22A8FCAFC005691BD /* BoardInteractorMock.swift */,
+				4C1D14B42A8FE5ED005691BD /* BoardViewMock.swift */,
+				4C1D14B82A8FEEFF005691BD /* BoardPresenterMock.swift */,
+				4C1D14BA2A8FF07A005691BD /* BoardDataPublisherMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		4C8644B22A82B42C00184C1B = {
@@ -324,6 +417,8 @@
 		4CA2A3312A892A58005D1C45 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				4C1D14AA2A8EB9A8005691BD /* Extensions */,
+				4C1D14992A8EA704005691BD /* ViewState.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -344,6 +439,9 @@
 			dependencies = (
 			);
 			name = Stack;
+			packageProductDependencies = (
+				4C1D149C2A8EAFFD005691BD /* DesignSystem */,
+			);
 			productName = Stack;
 			productReference = 4C8644BB2A82B42C00184C1B /* Stack.app */;
 			productType = "com.apple.product-type.application";
@@ -416,6 +514,9 @@
 				Base,
 			);
 			mainGroup = 4C8644B22A82B42C00184C1B;
+			packageReferences = (
+				4C1D149B2A8EAFFD005691BD /* XCRemoteSwiftPackageReference "DesignSystem" */,
+			);
 			productRefGroup = 4C8644BC2A82B42C00184C1B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,20 +564,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1D14AC2A8EB9BE005691BD /* NSTextField+Extension.swift in Sources */,
 				4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */,
 				4C0C5C332A877F0D0025B3C8 /* BoardContent.swift in Sources */,
+				4C1D149A2A8EA704005691BD /* ViewState.swift in Sources */,
+				4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */,
 				4C0C5C2F2A877E860025B3C8 /* BoardColumn.swift in Sources */,
 				4C0C5C512A881FCE0025B3C8 /* DocumentError.swift in Sources */,
+				4C1D14942A8D5514005691BD /* BoardPresenter.swift in Sources */,
 				4C0C5C312A877E950025B3C8 /* Card.swift in Sources */,
+				4C1D14AE2A8F459F005691BD /* BoardUnitAssembly.swift in Sources */,
 				4C0C5C452A87CA370025B3C8 /* DocumentFile.swift in Sources */,
 				4C05C1532A8D35CF00AF6036 /* DocumentDataRepresentation.swift in Sources */,
 				4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */,
 				4C0C5C472A87CFA70025B3C8 /* BoardDataProvider.swift in Sources */,
 				4C05C14A2A8A8A0600AF6036 /* DocumentStorage.swift in Sources */,
 				4C0C5C392A8782280025B3C8 /* ContentProvider.swift in Sources */,
+				4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */,
+				4C1D14A52A8EB64A005691BD /* ColumnConfiguration.swift in Sources */,
 				4C05C1432A8A7F0700AF6036 /* Category.swift in Sources */,
 				4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */,
 				4C05C1552A8D35EC00AF6036 /* DocumentDataPublisher.swift in Sources */,
+				4C1D14982A8EA57E005691BD /* BoardUnitModel.swift in Sources */,
+				4C1D14962A8D552D005691BD /* BoardInteractor.swift in Sources */,
 				4C0C5C3D2A8788330025B3C8 /* VersionedFile.swift in Sources */,
 				4C0C5C362A87801E0025B3C8 /* Period.swift in Sources */,
 			);
@@ -486,11 +596,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1D14B32A8FCAFC005691BD /* BoardInteractorMock.swift in Sources */,
+				4C1D14BB2A8FF07A005691BD /* BoardDataPublisherMock.swift in Sources */,
 				4C05C15F2A8D376900AF6036 /* ContentProviderMock.swift in Sources */,
 				4C05C1582A8D363200AF6036 /* DocumentStorageTests.swift in Sources */,
+				4C1D14B52A8FE5ED005691BD /* BoardViewMock.swift in Sources */,
 				4C05C1612A8D384E00AF6036 /* Data+Extension.swift in Sources */,
+				4C1D14B72A8FEE94005691BD /* BoardInteractorTests.swift in Sources */,
+				4C1D14B02A8FCA38005691BD /* BoardPresenterTests.swift in Sources */,
 				4C05C15B2A8D36DE00AF6036 /* String+Extension.swift in Sources */,
 				4C0C5C4B2A87F40C0025B3C8 /* BoardDataProviderTests.swift in Sources */,
+				4C1D14B92A8FEEFF005691BD /* BoardPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +927,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C1D149B2A8EAFFD005691BD /* XCRemoteSwiftPackageReference "DesignSystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/unsaferawpointer/DesignSystem";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C1D149C2A8EAFFD005691BD /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C1D149B2A8EAFFD005691BD /* XCRemoteSwiftPackageReference "DesignSystem" */;
+			productName = DesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C8644B32A82B42C00184C1B /* Project object */;
 }
