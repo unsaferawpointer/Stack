@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol BoardUnitPresenter {
+protocol BoardUnitPresenter: AnyObject {
 	func present(_ content: BoardContent)
 }
 
@@ -16,7 +16,21 @@ final class BoardPresenter {
 
 	var interactor: BoardUnitInteractor?
 
+	var localization: BoardUnitLocalization
+
 	var view: BoardView?
+
+	// MARK: - Initialization
+
+	/// Basic initialization
+	///
+	/// - Parameters:
+	///    - localization: Unit localization
+	init(
+		localization: BoardUnitLocalization = BoardLocalization()
+	) {
+		self.localization = localization
+	}
 }
 
 // MARK: - BoardUnitPresenter
@@ -39,6 +53,10 @@ extension BoardPresenter: BoardViewOutput {
 			self?.present(content)
 		}
 	}
+
+	func addColumnButtonHasBeenClicked() {
+		interactor?.addColumn(with: localization.defaultColumnTitle)
+	}
 }
 
 // MARK: - Helpers
@@ -49,7 +67,7 @@ private extension BoardPresenter {
 			ColumnConfiguration(
 				id: column.id,
 				title: column.title,
-				placeholder: nil
+				placeholder: localization.columnHeaderPlaceholder
 			)
 		}
 		return BoardUnitModel(columns: columns)

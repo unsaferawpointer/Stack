@@ -13,6 +13,8 @@ extension NSTextField {
 		let field = NSTextField()
 		field.drawsBackground = false
 		field.isBezeled = false
+		field.cell?.truncatesLastVisibleLine = true
+		field.cell?.lineBreakMode = .byTruncatingTail
 		return field
 	}
 

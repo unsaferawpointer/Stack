@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -688,9 +689,28 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="B6772A6D-8D83-4621-8AF6-7DEAED07765C" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="JDx-Kb-BXI">
-                            <allowedToolbarItems/>
-                            <defaultToolbarItems/>
+                        <toolbar key="toolbar" implicitIdentifier="49E98C2E-9CBC-455F-AD28-EA37AAB56FCB" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="y8Q-6q-7oF">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="A4319C09-B994-40FA-AE13-01756CA12F5E" label="Add Column" paletteLabel="Add Column" image="plus.square.fill" catalog="system" title="Add Column" id="rbz-hG-diX">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="126" height="25"/>
+                                    <size key="maxSize" width="127" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="siw-53-QcE">
+                                        <rect key="frame" x="0.0" y="14" width="126" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Add Column" bezelStyle="texturedRounded" image="plus.square.fill" catalog="system" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="3C6-jm-TSG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="addColumnButtonHasBeenClicked:" target="6f7-a7-6o1" id="lYx-Jd-AQk"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="rbz-hG-diX"/>
+                            </defaultToolbarItems>
                         </toolbar>
                         <connections>
                             <outlet property="delegate" destination="jGA-0Y-lOj" id="98r-iN-zZc"/>
@@ -702,4 +722,7 @@
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.square.fill" catalog="system" width="15" height="14"/>
+    </resources>
 </document>

@@ -17,6 +17,9 @@ class BoardDocument: NSDocument {
 			provider: BoardDataProvider()
 		)
 		super.init()
+		storage.addObservation(for: self) { [weak self] _, content in
+			self?.updateChangeCount(.changeDone)
+		}
 	}
 
 	override class var autosavesInPlace: Bool {

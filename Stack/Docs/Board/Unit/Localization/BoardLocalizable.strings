@@ -1,0 +1,10 @@
+/* 
+  BoardLocalizable.strings
+  Stack
+
+  Created by Anton Cherkasov on 19.08.2023.
+  
+*/
+
+"default_column_title" = "New Column";
+"column_header_placeholder" = "Enter a column title";

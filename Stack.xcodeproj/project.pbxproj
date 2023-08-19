@@ -53,6 +53,9 @@
 		4C8644DE2A82B42D00184C1B /* StackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DD2A82B42D00184C1B /* StackUITests.swift */; };
 		4C8644E02A82B42D00184C1B /* StackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */; };
 		4CA2A31B2A88263D005D1C45 /* Board_v1_invalid_version.stackboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */; };
+		4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */; };
+		4CF80C832A909D3400E985A5 /* BoardLocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */; };
+		4CF80C862A90AF8200E985A5 /* BoardLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		4C8644DD2A82B42D00184C1B /* StackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITests.swift; sourceTree = "<group>"; };
 		4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */ = {isa = PBXFileReference; lastKnownFileType = text; path = Board_v1_invalid_version.stackboard; sourceTree = "<group>"; };
+		4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalization.swift; sourceTree = "<group>"; };
+		4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalizationMock.swift; sourceTree = "<group>"; };
+		4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = BoardLocalizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +317,7 @@
 				4C1D14932A8D5514005691BD /* BoardPresenter.swift */,
 				4C1D14952A8D552D005691BD /* BoardInteractor.swift */,
 				4C1D14972A8EA57E005691BD /* BoardUnitModel.swift */,
+				4CF80C842A90AF6000E985A5 /* Localization */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				4C1D14B42A8FE5ED005691BD /* BoardViewMock.swift */,
 				4C1D14B82A8FEEFF005691BD /* BoardPresenterMock.swift */,
 				4C1D14BA2A8FF07A005691BD /* BoardDataPublisherMock.swift */,
+				4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -421,6 +429,15 @@
 				4C1D14992A8EA704005691BD /* ViewState.swift */,
 			);
 			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		4CF80C842A90AF6000E985A5 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */,
+				4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +552,7 @@
 			files = (
 				4C8644C52A82B42D00184C1B /* Assets.xcassets in Resources */,
 				4C8644C82A82B42D00184C1B /* Main.storyboard in Resources */,
+				4CF80C862A90AF8200E985A5 /* BoardLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +595,7 @@
 				4C0C5C452A87CA370025B3C8 /* DocumentFile.swift in Sources */,
 				4C05C1532A8D35CF00AF6036 /* DocumentDataRepresentation.swift in Sources */,
 				4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */,
+				4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */,
 				4C0C5C472A87CFA70025B3C8 /* BoardDataProvider.swift in Sources */,
 				4C05C14A2A8A8A0600AF6036 /* DocumentStorage.swift in Sources */,
 				4C0C5C392A8782280025B3C8 /* ContentProvider.swift in Sources */,
@@ -601,6 +620,7 @@
 				4C05C15F2A8D376900AF6036 /* ContentProviderMock.swift in Sources */,
 				4C05C1582A8D363200AF6036 /* DocumentStorageTests.swift in Sources */,
 				4C1D14B52A8FE5ED005691BD /* BoardViewMock.swift in Sources */,
+				4CF80C832A909D3400E985A5 /* BoardLocalizationMock.swift in Sources */,
 				4C05C1612A8D384E00AF6036 /* Data+Extension.swift in Sources */,
 				4C1D14B72A8FEE94005691BD /* BoardInteractorTests.swift in Sources */,
 				4C1D14B02A8FCA38005691BD /* BoardPresenterTests.swift in Sources */,

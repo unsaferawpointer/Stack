@@ -16,10 +16,13 @@ final class BoardPresenterTests: XCTestCase {
 
 	var view: BoardViewMock!
 
+	var localization: BoardLocalizationMock!
+
 	override func setUpWithError() throws {
 		interactor = BoardInteractorMock()
 		view = BoardViewMock()
-		sut = BoardPresenter()
+		localization = BoardLocalizationMock()
+		sut = BoardPresenter(localization: localization)
 		sut.interactor = interactor
 		sut.view = view
 	}
@@ -28,6 +31,7 @@ final class BoardPresenterTests: XCTestCase {
 		sut = nil
 		interactor = nil
 		view = nil
+		localization = nil
 	}
 }
 
@@ -64,6 +68,18 @@ extension BoardPresenterTests {
 		XCTAssertEqual(model.columns, [.init(id: column1.id, title: column1.title),
 									   .init(id: column2.id, title: column2.title)])
 	}
+
+	func test_addColumnButtonHasBeenClicked() throws {
+		// Act
+		sut.addColumnButtonHasBeenClicked()
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .addColumn(title) = interactor.invocations.first else {
+			return XCTFail("`addColumn` must be invocked")
+		}
+		XCTAssertEqual(title, localization.defaultColumnTitle)
+	}
 }
 
 // MARK: - BoardUnitPresenter
@@ -91,8 +107,20 @@ extension BoardPresenterTests {
 			return XCTFail("`display` must be invocked")
 		}
 
-		XCTAssertEqual(model.columns, [.init(id: column1.id, title: column1.title),
-									   .init(id: column2.id, title: column2.title)])
+		let placeholder = localization.columnHeaderPlaceholder
+
+		let expectedColumn1Model = ColumnConfiguration(
+			id: column1.id,
+			title: column1.title,
+			placeholder: placeholder
+		)
+
+		let expectedColumn2Model = ColumnConfiguration(
+			id: column2.id,
+			title: column2.title,
+			placeholder: placeholder
+		)
+		XCTAssertEqual(model.columns, [expectedColumn1Model, expectedColumn2Model])
 
 		XCTAssertTrue(interactor.invocations.isEmpty)
 	}

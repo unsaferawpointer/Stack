@@ -54,6 +54,23 @@ extension BoardInteractorTests {
 		XCTAssertEqual(expectedContent, storage.stubs.state)
 		XCTAssertEqual(storage.invocations, [.addObservation])
 	}
+
+	func test_addColumn() throws {
+		// Arrange
+		let title: String = .random
+		storage.invocations.removeAll()
+
+		// Act
+		sut.addColumn(with: title)
+
+		// Assert
+		XCTAssertEqual(storage.invocations.count, 1)
+		guard case .modificate = storage.invocations.first else {
+			return XCTFail("`modificate` must be invocked")
+		}
+		XCTAssertEqual(storage.stubs.modificated.columns.count, 1)
+		XCTAssertEqual(storage.stubs.modificated.columns.last?.title, title)
+	}
 }
 
 // MARK: - Common cases

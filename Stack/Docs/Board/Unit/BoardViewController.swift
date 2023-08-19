@@ -12,6 +12,8 @@ protocol BoardViewOutput {
 
 	/// View did change life-cycle state
 	func viewDidChange(_ state: ViewState)
+
+	func addColumnButtonHasBeenClicked()
 }
 
 protocol BoardView {
@@ -70,5 +72,14 @@ extension BoardViewController: BoardView {
 
 	func display(_ model: BoardUnitModel) {
 		stackView.reloardItems(model.columns)
+	}
+}
+
+// MARK: - Actions
+extension BoardViewController {
+
+	@IBAction
+	func addColumnButtonHasBeenClicked(_ sender: Any) {
+		output?.addColumnButtonHasBeenClicked()
 	}
 }

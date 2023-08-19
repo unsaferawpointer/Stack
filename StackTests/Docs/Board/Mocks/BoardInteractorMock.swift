@@ -21,6 +21,10 @@ extension BoardInteractorMock: BoardUnitInteractor {
 		invocations.append(.fetchData)
 		completionBlock(stubs.fetchData)
 	}
+
+	func addColumn(with title: String) {
+		invocations.append(.addColumn(title: title))
+	}
 }
 
 // MARK: - Nested data structs
@@ -28,6 +32,7 @@ extension BoardInteractorMock {
 
 	enum Action {
 		case fetchData
+		case addColumn(title: String)
 	}
 
 	struct Stubs {

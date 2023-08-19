@@ -7,18 +7,25 @@
 
 import Foundation
 
+/// `Board` unit interactor
 protocol BoardUnitInteractor: AnyObject {
 
 	/// Fetch data
 	func fetchData(_ completionBlock: (BoardContent) -> Void)
+
+	/// Add new column
+	///
+	/// - Parameters:
+	///    - title: Column title
+	func addColumn(with title: String)
 }
 
 /// `Board` unit interactor
 final class BoardInteractor {
 
-	var storage: any DocumentDataPublisher<BoardContent>
+	private(set) var storage: any DocumentDataPublisher<BoardContent>
 
-	var presenter: BoardUnitPresenter?
+	weak var presenter: BoardUnitPresenter?
 
 	// MARK: - Initialization
 
@@ -37,6 +44,13 @@ extension BoardInteractor: BoardUnitInteractor {
 
 	func fetchData(_ completionBlock: (BoardContent) -> Void) {
 		completionBlock(storage.state)
+	}
+
+	func addColumn(with title: String) {
+		let new = BoardColumn(title: title)
+		storage.modificate { state in
+			state.columns.append(new)
+		}
 	}
 }
 

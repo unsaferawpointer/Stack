@@ -20,7 +20,7 @@ struct BoardContent {
 	private(set) var velocity: Int?
 
 	/// Board column
-	private(set) var columns: [BoardColumn]
+	var columns: [BoardColumn]
 
 	// MARK: - Initialization
 
