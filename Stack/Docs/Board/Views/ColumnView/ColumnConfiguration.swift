@@ -17,4 +17,6 @@ struct ColumnConfiguration: UniqueConfiguration {
 	var title: String
 
 	var placeholder: String?
+
+	var menu: MenuConfiguration?
 }

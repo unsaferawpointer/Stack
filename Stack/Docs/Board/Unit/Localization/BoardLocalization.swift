@@ -9,8 +9,16 @@ import Foundation
 
 /// Board Unit localization
 protocol BoardUnitLocalization {
+
 	var defaultColumnTitle: String { get }
 	var columnHeaderPlaceholder: String { get }
+
+	// MARK: - Context menu items
+
+	var newCardContextMenuItemTitle: String { get }
+	var moveForwardContextMenuItemTitle: String { get }
+	var moveBackwardContextMenuItemTitle: String { get }
+	var deleteContextMenuItemTitle: String { get }
 }
 
 /// Board Unit localization
@@ -25,6 +33,24 @@ extension BoardLocalization: BoardUnitLocalization {
 
 	var columnHeaderPlaceholder: String {
 		return "column_header_placeholder".localized()
+	}
+
+	// MARK: - Context menu items
+
+	var newCardContextMenuItemTitle: String {
+		return "new_card_context_menu_item_title".localized()
+	}
+
+	var moveForwardContextMenuItemTitle: String {
+		return "move_forward_context_menu_item_title".localized()
+	}
+
+	var moveBackwardContextMenuItemTitle: String {
+		return "move_backward_context_menu_item_title".localized()
+	}
+
+	var deleteContextMenuItemTitle: String {
+		return "delete_context_menu_item_title".localized()
 	}
 }
 

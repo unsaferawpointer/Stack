@@ -8,3 +8,9 @@
 
 "default_column_title" = "New Column";
 "column_header_placeholder" = "Enter a column title";
+
+// MARK: - Context menu items
+"new_card_context_menu_item_title" = "New card";
+"move_forward_context_menu_item_title" = "Move forward";
+"move_backward_context_menu_item_title" = "Move backward";
+"delete_context_menu_item_title" = "Delete";

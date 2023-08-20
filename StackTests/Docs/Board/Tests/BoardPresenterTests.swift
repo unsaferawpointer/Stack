@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import DesignSystem
 @testable import Stack
 
 final class BoardPresenterTests: XCTestCase {
@@ -61,12 +62,9 @@ extension BoardPresenterTests {
 		}
 
 		XCTAssertEqual(view.invocations.count, 1)
-		guard case let .display(model) = view.invocations.first else {
+		guard case .display = view.invocations.first else {
 			return XCTFail("`display` must be invocked")
 		}
-
-		XCTAssertEqual(model.columns, [.init(id: column1.id, title: column1.title),
-									   .init(id: column2.id, title: column2.title)])
 	}
 
 	func test_addColumnButtonHasBeenClicked() throws {
@@ -109,18 +107,21 @@ extension BoardPresenterTests {
 
 		let placeholder = localization.columnHeaderPlaceholder
 
-		let expectedColumn1Model = ColumnConfiguration(
-			id: column1.id,
-			title: column1.title,
-			placeholder: placeholder
-		)
+		XCTAssertEqual(model.columns.count, 2)
 
-		let expectedColumn2Model = ColumnConfiguration(
-			id: column2.id,
-			title: column2.title,
-			placeholder: placeholder
-		)
-		XCTAssertEqual(model.columns, [expectedColumn1Model, expectedColumn2Model])
+		let column1Model = model.columns[0]
+
+		XCTAssertEqual(column1Model.id, column1.id)
+		XCTAssertEqual(column1Model.title, column1.title)
+		XCTAssertEqual(column1Model.placeholder, placeholder)
+		XCTAssertEqual(column1Model.menu?.items.count, 6)
+
+		let column2Model = model.columns[1]
+
+		XCTAssertEqual(column2Model.id, column2.id)
+		XCTAssertEqual(column2Model.title, column2.title)
+		XCTAssertEqual(column2Model.placeholder, placeholder)
+		XCTAssertEqual(column2Model.menu?.items.count, 6)
 
 		XCTAssertTrue(interactor.invocations.isEmpty)
 	}

@@ -24,12 +24,27 @@ class ColumnHeader: NSVisualEffectView {
 		}
 	}
 
+	var menuConfiguration: MenuConfiguration?
+
 	// MARK: - UI-Properties
 
 	private lazy var textfield = NSTextField
 		.plain()
 		.fontStyle(.headline)
 		.foregroundColor(.textColor)
+
+	private lazy var menuButton: NSButton = {
+		let view = NSButton(
+			title: "",
+			target: self,
+			action: #selector(menuButtonHasBeenClicked(_:))
+		)
+		view.image = NSImage(systemSymbolName: "ellipsis", accessibilityDescription: nil)
+		view.imagePosition = .imageOnly
+		view.setButtonType(.momentaryPushIn)
+		view.bezelStyle = .texturedRounded
+		return view
+	}()
 
 	// MARK: - Initialization
 
@@ -54,6 +69,21 @@ class ColumnHeader: NSVisualEffectView {
 
 }
 
+// MARK: - Actions
+extension ColumnHeader {
+
+	@objc
+	func menuButtonHasBeenClicked(_ sender: Any) {
+
+		guard let configuration = menuConfiguration else {
+			return
+		}
+
+		let menu = ConfigurableMenu(configuration: configuration)
+		menu.popUp(positioning: menu.items.first, at: menuButton.frame.origin, in: self)
+	}
+}
+
 // MARK: - Helpers
 private extension ColumnHeader {
 
@@ -63,7 +93,7 @@ private extension ColumnHeader {
 	}
 
 	func configureConstraints() {
-		[textfield].forEach {
+		[textfield, menuButton].forEach {
 			$0.translatesAutoresizingMaskIntoConstraints = false
 			addSubview($0)
 		}
@@ -71,8 +101,11 @@ private extension ColumnHeader {
 		NSLayoutConstraint.activate(
 			[
 				textfield.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-				textfield.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-				textfield.centerYAnchor.constraint(equalTo: centerYAnchor)
+				textfield.centerYAnchor.constraint(equalTo: centerYAnchor),
+				textfield.trailingAnchor.constraint(equalTo: menuButton.leadingAnchor, constant: -16),
+
+				menuButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+				menuButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
 			]
 		)
 	}

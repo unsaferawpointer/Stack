@@ -24,6 +24,7 @@ class ColumnView: NSView, ConfigurableView {
 	func configure(_ configuration: ColumnConfiguration) {
 		header.title = configuration.title
 		header.placeholderString = configuration.placeholder
+		header.menuConfiguration = configuration.menu
 	}
 
 	// MARK: - UI-Properties

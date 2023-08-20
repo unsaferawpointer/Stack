@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DesignSystem
 
 protocol BoardUnitPresenter: AnyObject {
 	func present(_ content: BoardContent)
@@ -67,9 +68,28 @@ private extension BoardPresenter {
 			ColumnConfiguration(
 				id: column.id,
 				title: column.title,
-				placeholder: localization.columnHeaderPlaceholder
+				placeholder: localization.columnHeaderPlaceholder,
+				menu: makeMenu(column: column)
 			)
 		}
 		return BoardUnitModel(columns: columns)
+	}
+
+	func makeMenu(column: BoardColumn) -> MenuConfiguration {
+		return MenuConfiguration(items: [])
+			.addItem(localization.newCardContextMenuItemTitle, iconName: "plus") {
+				// TODO: - Handle action
+			}
+			.addDivider()
+			.addItem(localization.moveForwardContextMenuItemTitle, iconName: "arrow.forward.to.line") {
+				// TODO: - Handle action
+			}
+			.addItem(localization.moveBackwardContextMenuItemTitle, iconName: "arrow.backward.to.line") {
+				// TODO: - Handle action
+			}
+			.addDivider()
+			.addItem(localization.deleteContextMenuItemTitle, iconName: "trash") {
+				// TODO: - Handle action
+			}
 	}
 }
