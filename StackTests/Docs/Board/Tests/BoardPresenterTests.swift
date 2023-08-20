@@ -78,6 +78,118 @@ extension BoardPresenterTests {
 		}
 		XCTAssertEqual(title, localization.defaultColumnTitle)
 	}
+
+	func test_deleteColumn() throws {
+		// Arrange
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		let content = BoardContent(
+			id: UUID(),
+			period: nil,
+			velocity: nil,
+			columns: [column1]
+		)
+
+		sut.present(content)
+
+		guard case let .display(model) = view.invocations.first else {
+			return XCTFail("`display` must be invocked")
+		}
+
+		let menu = try XCTUnwrap(model.columns.first?.menu)
+
+		let itemOfDeletion = menu.items[5]
+		guard case .menuItem(let configuration) = itemOfDeletion else {
+			return XCTFail("`menuItem` is expected")
+		}
+
+		// Act
+		configuration.action?()
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .deleteColumn(id) = interactor.invocations.first else {
+			return XCTFail("`deleteColumn` must be invocked")
+		}
+
+		XCTAssertEqual(id, column1.id)
+
+	}
+
+	func test_moveForward() throws {
+		// Arrange
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		let content = BoardContent(
+			id: UUID(),
+			period: nil,
+			velocity: nil,
+			columns: [column1]
+		)
+
+		sut.present(content)
+
+		guard case let .display(model) = view.invocations.first else {
+			return XCTFail("`display` must be invocked")
+		}
+
+		let menu = try XCTUnwrap(model.columns.first?.menu)
+
+		let itemOfForwardMoving = menu.items[2]
+		guard case .menuItem(let configuration) = itemOfForwardMoving else {
+			return XCTFail("`menuItem` is expected")
+		}
+
+		// Act
+		configuration.action?()
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .moveForwardColumn(id) = interactor.invocations.first else {
+			return XCTFail("`moveForwardColumn` must be invocked")
+		}
+
+		XCTAssertEqual(id, column1.id)
+	}
+
+	func test_moveBackward() throws {
+		// Arrange
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		let content = BoardContent(
+			id: UUID(),
+			period: nil,
+			velocity: nil,
+			columns: [column1]
+		)
+
+		sut.present(content)
+
+		guard case let .display(model) = view.invocations.first else {
+			return XCTFail("`display` must be invocked")
+		}
+
+		let menu = try XCTUnwrap(model.columns.first?.menu)
+
+		let itemOfForwardMoving = menu.items[3]
+		guard case .menuItem(let configuration) = itemOfForwardMoving else {
+			return XCTFail("`menuItem` is expected")
+		}
+
+		// Act
+		configuration.action?()
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .moveBackwardColumn(id) = interactor.invocations.first else {
+			return XCTFail("`moveBackwardColumn` must be invocked")
+		}
+
+		XCTAssertEqual(id, column1.id)
+	}
 }
 
 // MARK: - BoardUnitPresenter

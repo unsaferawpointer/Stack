@@ -81,15 +81,15 @@ private extension BoardPresenter {
 				// TODO: - Handle action
 			}
 			.addDivider()
-			.addItem(localization.moveForwardContextMenuItemTitle, iconName: "arrow.forward.to.line") {
-				// TODO: - Handle action
+			.addItem(localization.moveForwardContextMenuItemTitle, iconName: "arrow.forward.to.line") { [weak self] in
+				self?.interactor?.moveForwardColumn(column.id)
 			}
-			.addItem(localization.moveBackwardContextMenuItemTitle, iconName: "arrow.backward.to.line") {
-				// TODO: - Handle action
+			.addItem(localization.moveBackwardContextMenuItemTitle, iconName: "arrow.backward.to.line") { [weak self] in
+				self?.interactor?.moveBackwardColumn(column.id)
 			}
 			.addDivider()
-			.addItem(localization.deleteContextMenuItemTitle, iconName: "trash") {
-				// TODO: - Handle action
+			.addItem(localization.deleteContextMenuItemTitle, iconName: "trash") { [weak self] in
+				self?.interactor?.deleteColumn(column.id)
 			}
 	}
 }

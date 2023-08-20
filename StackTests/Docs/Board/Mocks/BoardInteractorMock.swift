@@ -5,6 +5,7 @@
 //  Created by Anton Cherkasov on 18.08.2023.
 //
 
+import Foundation
 @testable import Stack
 
 final class BoardInteractorMock {
@@ -25,6 +26,18 @@ extension BoardInteractorMock: BoardUnitInteractor {
 	func addColumn(with title: String) {
 		invocations.append(.addColumn(title: title))
 	}
+
+	func deleteColumn(_ id: UUID) {
+		invocations.append(.deleteColumn(id: id))
+	}
+
+	func moveForwardColumn(_ id: UUID) {
+		invocations.append(.moveForwardColumn(id: id))
+	}
+
+	func moveBackwardColumn(_ id: UUID) {
+		invocations.append(.moveBackwardColumn(id: id))
+	}
 }
 
 // MARK: - Nested data structs
@@ -33,6 +46,9 @@ extension BoardInteractorMock {
 	enum Action {
 		case fetchData
 		case addColumn(title: String)
+		case deleteColumn(id: UUID)
+		case moveForwardColumn(id: UUID)
+		case moveBackwardColumn(id: UUID)
 	}
 
 	struct Stubs {

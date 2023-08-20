@@ -18,6 +18,24 @@ protocol BoardUnitInteractor: AnyObject {
 	/// - Parameters:
 	///    - title: Column title
 	func addColumn(with title: String)
+
+	/// Delete column
+	///
+	/// - Parameters:
+	///    - id: Column identifier
+	func deleteColumn(_ id: UUID)
+
+	/// Move column forward
+	///
+	/// - Parameters:
+	///    - id: Column identifier
+	func moveForwardColumn(_ id: UUID)
+
+	/// Move column backward
+	///
+	/// - Parameters:
+	///    - id: Column identifier
+	func moveBackwardColumn(_ id: UUID)
 }
 
 /// `Board` unit interactor
@@ -50,6 +68,42 @@ extension BoardInteractor: BoardUnitInteractor {
 		let new = BoardColumn(title: title)
 		storage.modificate { state in
 			state.columns.append(new)
+		}
+	}
+
+	func moveForwardColumn(_ id: UUID) {
+		storage.modificate { state in
+			guard let index = state.columns.firstIndex(where: { $0.id == id }) else {
+				return
+			}
+			guard index < (state.columns.count - 1) else {
+				return
+			}
+			let newIndex = index + 1
+			let movedColumn = state.columns.remove(at: index)
+			state.columns.insert(movedColumn, at: newIndex)
+		}
+	}
+
+	func moveBackwardColumn(_ id: UUID) {
+		storage.modificate { state in
+			guard let index = state.columns.firstIndex(where: { $0.id == id }) else {
+				return
+			}
+			guard index != 0 else {
+				return
+			}
+			let newIndex = index - 1
+			let movedColumn = state.columns.remove(at: index)
+			state.columns.insert(movedColumn, at: newIndex)
+		}
+	}
+
+	func deleteColumn(_ id: UUID) {
+		storage.modificate { state in
+			state.columns.removeAll { column in
+				column.id == id
+			}
 		}
 	}
 }

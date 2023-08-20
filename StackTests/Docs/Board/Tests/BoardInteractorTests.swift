@@ -71,6 +71,71 @@ extension BoardInteractorTests {
 		XCTAssertEqual(storage.stubs.modificated.columns.count, 1)
 		XCTAssertEqual(storage.stubs.modificated.columns.last?.title, title)
 	}
+
+	func test_deleteColumn() throws {
+		// Arrange
+		storage.invocations.removeAll()
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+		let column2 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		storage.stubs.modificated.columns = [column1, column2]
+
+		// Act
+		sut.deleteColumn(column1.id)
+
+		// Assert
+		XCTAssertEqual(storage.invocations.count, 1)
+		guard case .modificate = storage.invocations.first else {
+			return XCTFail("`modificate` must be invocked")
+		}
+		XCTAssertEqual(storage.stubs.modificated.columns.count, 1)
+		XCTAssertEqual(storage.stubs.modificated.columns.first?.id, column2.id)
+	}
+
+	func test_moveForward() throws {
+		// Arrange
+		storage.invocations.removeAll()
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+		let column2 = BoardColumn(id: UUID(), title: .random, cards: [])
+		let column3 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		storage.stubs.modificated.columns = [column1, column2, column3]
+
+		// Act
+		sut.moveForwardColumn(column2.id)
+
+		// Assert
+		XCTAssertEqual(storage.invocations.count, 1)
+		guard case .modificate = storage.invocations.first else {
+			return XCTFail("`modificate` must be invocked")
+		}
+		XCTAssertEqual(storage.stubs.modificated.columns.count, 3)
+		XCTAssertEqual(storage.stubs.modificated.columns.map(\.id), [column1.id, column3.id, column2.id])
+	}
+
+	func test_moveBackward() throws {
+		// Arrange
+		storage.invocations.removeAll()
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+		let column2 = BoardColumn(id: UUID(), title: .random, cards: [])
+		let column3 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		storage.stubs.modificated.columns = [column1, column2, column3]
+
+		// Act
+		sut.moveBackwardColumn(column2.id)
+
+		// Assert
+		XCTAssertEqual(storage.invocations.count, 1)
+		guard case .modificate = storage.invocations.first else {
+			return XCTFail("`modificate` must be invocked")
+		}
+		XCTAssertEqual(storage.stubs.modificated.columns.count, 3)
+		XCTAssertEqual(storage.stubs.modificated.columns.map(\.id), [column2.id, column1.id, column3.id])
+	}
 }
 
 // MARK: - Common cases
