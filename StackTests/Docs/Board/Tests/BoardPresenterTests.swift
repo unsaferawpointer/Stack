@@ -190,6 +190,41 @@ extension BoardPresenterTests {
 
 		XCTAssertEqual(id, column1.id)
 	}
+
+	func test_renameColumn() throws {
+		// Arrange
+
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		let expectedTitle: String = .random
+
+		let content = BoardContent(
+			id: UUID(),
+			period: nil,
+			velocity: nil,
+			columns: [column1]
+		)
+
+		sut.present(content)
+
+		guard case let .display(model) = view.invocations.first else {
+			return XCTFail("`display` must be invocked")
+		}
+
+		let column1Model = try XCTUnwrap(model.columns.first)
+
+		// Act
+		column1Model.action?(expectedTitle)
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .renameColumn(newTitle, id) = interactor.invocations.first else {
+			return XCTFail("`renameColumn` must be invocked")
+		}
+
+		XCTAssertEqual(id, column1.id)
+		XCTAssertEqual(newTitle, expectedTitle)
+	}
 }
 
 // MARK: - BoardUnitPresenter

@@ -36,6 +36,13 @@ protocol BoardUnitInteractor: AnyObject {
 	/// - Parameters:
 	///    - id: Column identifier
 	func moveBackwardColumn(_ id: UUID)
+
+	/// Rename column
+	///
+	/// - Parameters:
+	///    - newTitle: New title
+	///    - id: Column identifier
+	func renameColumn(_ newTitle: String, ofColumn id: UUID)
 }
 
 /// `Board` unit interactor
@@ -104,6 +111,15 @@ extension BoardInteractor: BoardUnitInteractor {
 			state.columns.removeAll { column in
 				column.id == id
 			}
+		}
+	}
+
+	func renameColumn(_ newTitle: String, ofColumn id: UUID) {
+		storage.modificate { state in
+			guard let index = state.columns.firstIndex(where: { $0.id == id }) else {
+				return
+			}
+			state.columns[index].title = newTitle
 		}
 	}
 }

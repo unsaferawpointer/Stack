@@ -26,6 +26,8 @@ class ColumnHeader: NSVisualEffectView {
 
 	var menuConfiguration: MenuConfiguration?
 
+	var action: ((String) -> Void)?
+
 	// MARK: - UI-Properties
 
 	private lazy var textfield = NSTextField
@@ -58,6 +60,7 @@ class ColumnHeader: NSVisualEffectView {
 		self.placeholderString = placeholderString
 		super.init(frame: .zero)
 		configureUserInterface()
+		updateUserInterface()
 		configureConstraints()
 		material = .headerView
 		self.blendingMode = .withinWindow
@@ -84,10 +87,24 @@ extension ColumnHeader {
 	}
 }
 
+extension ColumnHeader {
+
+	@objc
+	func titleHasBeenChanged(_ sender: Any) {
+		action?(textfield.stringValue)
+	}
+}
+
 // MARK: - Helpers
 private extension ColumnHeader {
 
 	func configureUserInterface() {
+		textfield.cell?.sendsActionOnEndEditing = true
+		textfield.action = #selector(titleHasBeenChanged(_:))
+		textfield.target = self
+	}
+
+	func updateUserInterface() {
 		textfield.stringValue = title
 		textfield.placeholderString = placeholderString
 	}

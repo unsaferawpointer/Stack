@@ -25,6 +25,7 @@ class ColumnView: NSView, ConfigurableView {
 		header.title = configuration.title
 		header.placeholderString = configuration.placeholder
 		header.menuConfiguration = configuration.menu
+		header.action = configuration.action
 	}
 
 	// MARK: - UI-Properties

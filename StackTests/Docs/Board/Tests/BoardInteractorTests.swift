@@ -136,6 +136,26 @@ extension BoardInteractorTests {
 		XCTAssertEqual(storage.stubs.modificated.columns.count, 3)
 		XCTAssertEqual(storage.stubs.modificated.columns.map(\.id), [column2.id, column1.id, column3.id])
 	}
+
+	func test_renameColumn() throws {
+		// Arrange
+		storage.invocations.removeAll()
+
+		let newTitle: String = .random
+		let column1 = BoardColumn(id: UUID(), title: .random, cards: [])
+
+		storage.stubs.modificated.columns = [column1]
+
+		// Act
+		sut.renameColumn(newTitle, ofColumn: column1.id)
+
+		// Assert
+		XCTAssertEqual(storage.invocations.count, 1)
+		guard case .modificate = storage.invocations.first else {
+			return XCTFail("`modificate` must be invocked")
+		}
+		XCTAssertEqual(storage.stubs.modificated.columns.first?.title, newTitle)
+	}
 }
 
 // MARK: - Common cases

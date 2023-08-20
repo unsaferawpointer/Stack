@@ -38,6 +38,10 @@ extension BoardInteractorMock: BoardUnitInteractor {
 	func moveBackwardColumn(_ id: UUID) {
 		invocations.append(.moveBackwardColumn(id: id))
 	}
+
+	func renameColumn(_ newTitle: String, ofColumn id: UUID) {
+		invocations.append(.renameColumn(newTitle: newTitle, id: id))
+	}
 }
 
 // MARK: - Nested data structs
@@ -49,6 +53,7 @@ extension BoardInteractorMock {
 		case deleteColumn(id: UUID)
 		case moveForwardColumn(id: UUID)
 		case moveBackwardColumn(id: UUID)
+		case renameColumn(newTitle: String, id: UUID)
 	}
 
 	struct Stubs {

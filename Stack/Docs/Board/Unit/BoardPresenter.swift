@@ -70,7 +70,9 @@ private extension BoardPresenter {
 				title: column.title,
 				placeholder: localization.columnHeaderPlaceholder,
 				menu: makeMenu(column: column)
-			)
+			) { [weak self] newTitle in
+				self?.interactor?.renameColumn(newTitle, ofColumn: column.id)
+			}
 		}
 		return BoardUnitModel(columns: columns)
 	}
