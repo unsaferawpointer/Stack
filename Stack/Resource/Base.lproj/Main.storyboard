@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <capability name="Combo buttons" minToolsVersion="14.0" minSystemVersion="13.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -684,32 +685,32 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
+                    <window key="window" title="Window" separatorStyle="line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="49E98C2E-9CBC-455F-AD28-EA37AAB56FCB" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="y8Q-6q-7oF">
+                        <toolbar key="toolbar" implicitIdentifier="49E98C2E-9CBC-455F-AD28-EA37AAB56FCB" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="y8Q-6q-7oF">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="A4319C09-B994-40FA-AE13-01756CA12F5E" label="Add Column" paletteLabel="Add Column" image="plus.square.fill" catalog="system" title="Add Column" id="rbz-hG-diX">
+                                <toolbarItem implicitItemIdentifier="4E22C799-D243-46C0-AEF3-7C8B32FD3BAF" label="Custom View" paletteLabel="Custom View" image="plus" catalog="system" sizingBehavior="auto" id="Agu-v0-iW3">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="126" height="25"/>
-                                    <size key="maxSize" width="127" height="25"/>
-                                    <button key="view" verticalHuggingPriority="750" id="siw-53-QcE">
-                                        <rect key="frame" x="0.0" y="14" width="126" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Add Column" bezelStyle="texturedRounded" image="plus.square.fill" catalog="system" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="3C6-jm-TSG">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <connections>
-                                        <action selector="addColumnButtonHasBeenClicked:" target="6f7-a7-6o1" id="lYx-Jd-AQk"/>
-                                    </connections>
+                                    <comboButton key="view" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="center" title="" image="plus" catalog="system" imageScaling="proportionallyDown" id="X7f-cS-cQf">
+                                        <rect key="frame" x="14" y="14" width="48" height="24"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <menu key="menu" id="878-XZ-Rl6">
+                                            <items>
+                                                <menuItem title="New column" image="NSColumnViewTemplate" id="0nz-Io-LP9">
+                                                    <connections>
+                                                        <action selector="addColumnButtonHasBeenClicked:" target="6f7-a7-6o1" id="BGj-Gd-u1p"/>
+                                                    </connections>
+                                                </menuItem>
+                                            </items>
+                                        </menu>
+                                    </comboButton>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="rbz-hG-diX"/>
+                                <toolbarItem reference="Agu-v0-iW3"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -723,6 +724,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus.square.fill" catalog="system" width="15" height="14"/>
+        <image name="NSColumnViewTemplate" width="24" height="18"/>
+        <image name="plus" catalog="system" width="14" height="13"/>
     </resources>
 </document>
