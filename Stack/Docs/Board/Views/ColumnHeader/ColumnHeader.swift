@@ -44,6 +44,9 @@ class ColumnHeader: NSVisualEffectView {
 		view.image = NSImage(systemSymbolName: "ellipsis", accessibilityDescription: nil)
 		view.imagePosition = .imageOnly
 		view.setButtonType(.momentaryPushIn)
+		view.isBordered = true
+		view.imageScaling = .scaleNone
+		view.showsBorderOnlyWhileMouseInside = true
 		view.bezelStyle = .texturedRounded
 		return view
 	}()
