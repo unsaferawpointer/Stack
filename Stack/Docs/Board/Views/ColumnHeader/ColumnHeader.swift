@@ -88,9 +88,6 @@ extension ColumnHeader {
 		let menu = ConfigurableMenu(configuration: configuration)
 		menu.popUp(positioning: menu.items.first, at: menuButton.frame.origin, in: self)
 	}
-}
-
-extension ColumnHeader {
 
 	@objc
 	func titleHasBeenChanged(_ sender: Any) {
@@ -105,6 +102,7 @@ private extension ColumnHeader {
 		textfield.cell?.sendsActionOnEndEditing = true
 		textfield.action = #selector(titleHasBeenChanged(_:))
 		textfield.target = self
+		textfield.delegate = self
 	}
 
 	func updateUserInterface() {
@@ -128,5 +126,17 @@ private extension ColumnHeader {
 				menuButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
 			]
 		)
+	}
+}
+
+// MARK: - NSTextFieldDelegate
+extension ColumnHeader: NSTextFieldDelegate {
+
+	func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+		if commandSelector == #selector(insertNewline(_:)) {
+			window?.makeFirstResponder(nil)
+			return true
+		}
+		return false
 	}
 }
