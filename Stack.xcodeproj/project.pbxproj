@@ -37,7 +37,7 @@
 		4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A22A8EB63B005691BD /* ColumnView.swift */; };
 		4C1D14A52A8EB64A005691BD /* ColumnConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A42A8EB64A005691BD /* ColumnConfiguration.swift */; };
 		4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */; };
-		4C1D14AC2A8EB9BE005691BD /* NSTextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */; };
+		4C1D14AC2A8EB9BE005691BD /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AB2A8EB9BE005691BD /* TextField+Extension.swift */; };
 		4C1D14AE2A8F459F005691BD /* BoardUnitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */; };
 		4C1D14B02A8FCA38005691BD /* BoardPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14AF2A8FCA38005691BD /* BoardPresenterTests.swift */; };
 		4C1D14B32A8FCAFC005691BD /* BoardInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D14B22A8FCAFC005691BD /* BoardInteractorMock.swift */; };
@@ -53,6 +53,15 @@
 		4C8644DE2A82B42D00184C1B /* StackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DD2A82B42D00184C1B /* StackUITests.swift */; };
 		4C8644E02A82B42D00184C1B /* StackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */; };
 		4CA2A31B2A88263D005D1C45 /* Board_v1_invalid_version.stackboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */; };
+		4CBCF2912A98B602004E62C9 /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2902A98B602004E62C9 /* NSView+Extension.swift */; };
+		4CBCF2932A98E073004E62C9 /* NSEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2922A98E073004E62C9 /* NSEdgeInsets+Extension.swift */; };
+		4CBCF2952A98EFB8004E62C9 /* NSScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */; };
+		4CBCF2972A98F119004E62C9 /* NSButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2962A98F119004E62C9 /* NSButton+Extension.swift */; };
+		4CBCF29A2A98F2C6004E62C9 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2992A98F2C6004E62C9 /* MenuButton.swift */; };
+		4CBCF29C2A9905EC004E62C9 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF29B2A9905EC004E62C9 /* TextField.swift */; };
+		4CBCF2A12A9911E0004E62C9 /* TextfieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2A02A9911E0004E62C9 /* TextfieldConfiguration.swift */; };
+		4CBCF2A42A99121C004E62C9 /* MenuButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */; };
+		4CBCF2A62A9912BF004E62C9 /* HeaderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2A52A9912BF004E62C9 /* HeaderConfiguration.swift */; };
 		4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */; };
 		4CF80C832A909D3400E985A5 /* BoardLocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */; };
 		4CF80C862A90AF8200E985A5 /* BoardLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */; };
@@ -105,7 +114,7 @@
 		4C1D14A22A8EB63B005691BD /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		4C1D14A42A8EB64A005691BD /* ColumnConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnConfiguration.swift; sourceTree = "<group>"; };
 		4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnHeader.swift; sourceTree = "<group>"; };
-		4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extension.swift"; sourceTree = "<group>"; };
+		4C1D14AB2A8EB9BE005691BD /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUnitAssembly.swift; sourceTree = "<group>"; };
 		4C1D14AF2A8FCA38005691BD /* BoardPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPresenterTests.swift; sourceTree = "<group>"; };
 		4C1D14B22A8FCAFC005691BD /* BoardInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInteractorMock.swift; sourceTree = "<group>"; };
@@ -126,6 +135,15 @@
 		4C8644DD2A82B42D00184C1B /* StackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITests.swift; sourceTree = "<group>"; };
 		4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */ = {isa = PBXFileReference; lastKnownFileType = text; path = Board_v1_invalid_version.stackboard; sourceTree = "<group>"; };
+		4CBCF2902A98B602004E62C9 /* NSView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
+		4CBCF2922A98E073004E62C9 /* NSEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Extension.swift"; sourceTree = "<group>"; };
+		4CBCF2962A98F119004E62C9 /* NSButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Extension.swift"; sourceTree = "<group>"; };
+		4CBCF2992A98F2C6004E62C9 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		4CBCF29B2A9905EC004E62C9 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		4CBCF2A02A9911E0004E62C9 /* TextfieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldConfiguration.swift; sourceTree = "<group>"; };
+		4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonConfiguration.swift; sourceTree = "<group>"; };
+		4CBCF2A52A9912BF004E62C9 /* HeaderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConfiguration.swift; sourceTree = "<group>"; };
 		4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalization.swift; sourceTree = "<group>"; };
 		4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalizationMock.swift; sourceTree = "<group>"; };
 		4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = BoardLocalizable.strings; sourceTree = "<group>"; };
@@ -160,7 +178,7 @@
 		4C0588182A82BEB900078733 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				4C1D14922A8D54EE005691BD /* Unit */,
+				4C1D14922A8D54EE005691BD /* BoardUnit */,
 				4C1D14A12A8EB622005691BD /* Views */,
 				4C05C1442A8A866300AF6036 /* Models */,
 				4C0C5C462A87CFA70025B3C8 /* BoardDataProvider.swift */,
@@ -309,7 +327,7 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		4C1D14922A8D54EE005691BD /* Unit */ = {
+		4C1D14922A8D54EE005691BD /* BoardUnit */ = {
 			isa = PBXGroup;
 			children = (
 				4C1D14AD2A8F459F005691BD /* BoardUnitAssembly.swift */,
@@ -319,7 +337,7 @@
 				4C1D14972A8EA57E005691BD /* BoardUnitModel.swift */,
 				4CF80C842A90AF6000E985A5 /* Localization */,
 			);
-			path = Unit;
+			path = BoardUnit;
 			sourceTree = "<group>";
 		};
 		4C1D14A12A8EB622005691BD /* Views */ = {
@@ -344,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1D14A62A8EB6E1005691BD /* ColumnHeader.swift */,
+				4CBCF2A52A9912BF004E62C9 /* HeaderConfiguration.swift */,
 			);
 			path = ColumnHeader;
 			sourceTree = "<group>";
@@ -351,7 +370,11 @@
 		4C1D14AA2A8EB9A8005691BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4C1D14AB2A8EB9BE005691BD /* NSTextField+Extension.swift */,
+				4C1D14AB2A8EB9BE005691BD /* TextField+Extension.swift */,
+				4CBCF2902A98B602004E62C9 /* NSView+Extension.swift */,
+				4CBCF2922A98E073004E62C9 /* NSEdgeInsets+Extension.swift */,
+				4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */,
+				4CBCF2962A98F119004E62C9 /* NSButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,10 +448,46 @@
 		4CA2A3312A892A58005D1C45 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				4CBCF29D2A990F4F004E62C9 /* DesignSystem */,
 				4C1D14AA2A8EB9A8005691BD /* Extensions */,
 				4C1D14992A8EA704005691BD /* ViewState.swift */,
 			);
 			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		4CBCF29D2A990F4F004E62C9 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				4CBCF29E2A990F6F004E62C9 /* Views */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		4CBCF29E2A990F6F004E62C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CBCF2A22A991206004E62C9 /* MenuButton */,
+				4CBCF29F2A9911C1004E62C9 /* TextField */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4CBCF29F2A9911C1004E62C9 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4CBCF29B2A9905EC004E62C9 /* TextField.swift */,
+				4CBCF2A02A9911E0004E62C9 /* TextfieldConfiguration.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		4CBCF2A22A991206004E62C9 /* MenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				4CBCF2992A98F2C6004E62C9 /* MenuButton.swift */,
+				4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */,
+			);
+			path = MenuButton;
 			sourceTree = "<group>";
 		};
 		4CF80C842A90AF6000E985A5 /* Localization */ = {
@@ -582,16 +641,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C1D14AC2A8EB9BE005691BD /* NSTextField+Extension.swift in Sources */,
+				4C1D14AC2A8EB9BE005691BD /* TextField+Extension.swift in Sources */,
 				4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */,
+				4CBCF2A62A9912BF004E62C9 /* HeaderConfiguration.swift in Sources */,
+				4CBCF29A2A98F2C6004E62C9 /* MenuButton.swift in Sources */,
 				4C0C5C332A877F0D0025B3C8 /* BoardContent.swift in Sources */,
 				4C1D149A2A8EA704005691BD /* ViewState.swift in Sources */,
+				4CBCF2952A98EFB8004E62C9 /* NSScrollView+Extension.swift in Sources */,
+				4CBCF2972A98F119004E62C9 /* NSButton+Extension.swift in Sources */,
 				4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */,
 				4C0C5C2F2A877E860025B3C8 /* BoardColumn.swift in Sources */,
 				4C0C5C512A881FCE0025B3C8 /* DocumentError.swift in Sources */,
 				4C1D14942A8D5514005691BD /* BoardPresenter.swift in Sources */,
 				4C0C5C312A877E950025B3C8 /* Card.swift in Sources */,
 				4C1D14AE2A8F459F005691BD /* BoardUnitAssembly.swift in Sources */,
+				4CBCF2932A98E073004E62C9 /* NSEdgeInsets+Extension.swift in Sources */,
+				4CBCF29C2A9905EC004E62C9 /* TextField.swift in Sources */,
+				4CBCF2A12A9911E0004E62C9 /* TextfieldConfiguration.swift in Sources */,
 				4C0C5C452A87CA370025B3C8 /* DocumentFile.swift in Sources */,
 				4C05C1532A8D35CF00AF6036 /* DocumentDataRepresentation.swift in Sources */,
 				4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */,
@@ -599,9 +665,11 @@
 				4C0C5C472A87CFA70025B3C8 /* BoardDataProvider.swift in Sources */,
 				4C05C14A2A8A8A0600AF6036 /* DocumentStorage.swift in Sources */,
 				4C0C5C392A8782280025B3C8 /* ContentProvider.swift in Sources */,
+				4CBCF2912A98B602004E62C9 /* NSView+Extension.swift in Sources */,
 				4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */,
 				4C1D14A52A8EB64A005691BD /* ColumnConfiguration.swift in Sources */,
 				4C05C1432A8A7F0700AF6036 /* Category.swift in Sources */,
+				4CBCF2A42A99121C004E62C9 /* MenuButtonConfiguration.swift in Sources */,
 				4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */,
 				4C05C1552A8D35EC00AF6036 /* DocumentDataPublisher.swift in Sources */,
 				4C1D14982A8EA57E005691BD /* BoardUnitModel.swift in Sources */,

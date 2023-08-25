@@ -22,25 +22,14 @@ class ColumnView: NSView, ConfigurableView {
 	}
 
 	func configure(_ configuration: ColumnConfiguration) {
-		header.title = configuration.title
-		header.placeholderString = configuration.placeholder
-		header.menuConfiguration = configuration.menu
-		header.action = configuration.action
+		header.configure(configuration.header)
 	}
 
 	// MARK: - UI-Properties
 
-	lazy private var header = ColumnHeader(title: "")
+	lazy private var header = ColumnHeader(.empty)
 
-	lazy private var scrollview: NSScrollView = {
-		let view = NSScrollView()
-		view.borderType = .noBorder
-		view.hasHorizontalScroller = false
-		view.autohidesScrollers = true
-		view.hasVerticalScroller = false
-		view.automaticallyAdjustsContentInsets = true
-		return view
-	}()
+	lazy private var scrollview = NSScrollView.plain()
 
 	lazy private var list: NSTableView = {
 		let view = NSTableView()
@@ -72,28 +61,13 @@ private extension ColumnView {
 	}
 
 	func configureConstraints() {
-		scrollview.documentView = list
-		scrollview.translatesAutoresizingMaskIntoConstraints = false
-		addSubview(scrollview)
-		NSLayoutConstraint.activate(
-			[
-				scrollview.leadingAnchor.constraint(equalTo: leadingAnchor),
-				scrollview.topAnchor.constraint(equalTo: topAnchor),
-				scrollview.trailingAnchor.constraint(equalTo: trailingAnchor),
-				scrollview.bottomAnchor.constraint(equalTo: bottomAnchor)
-			]
-		)
 
+		scrollview.documentView = list
+		scrollview.attachEdges(.all, toView: self)
+		scrollview.contentInsets = .init(top: 32)
+
+		header.attachEdges([.leading, .top, .trailing], toView: self)
+		header.set(.height, toConstant: 32)
 		header.translatesAutoresizingMaskIntoConstraints = false
-		addSubview(header)
-		NSLayoutConstraint.activate(
-			[
-				header.heightAnchor.constraint(equalToConstant: 32),
-				header.leadingAnchor.constraint(equalTo: leadingAnchor),
-				header.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-				header.trailingAnchor.constraint(equalTo: trailingAnchor)
-			]
-		)
-		scrollview.contentInsets = .init(top: 32, left: 0, bottom: 0, right: 0)
 	}
 }

@@ -14,22 +14,13 @@ struct ColumnConfiguration: UniqueConfiguration {
 
 	var id: AnyHashable
 
-	var title: String
-
-	var placeholder: String?
-
-	var menu: MenuConfiguration?
-
-	var action: ((String) -> Void)?
+	var header: HeaderConfiguration
 }
 
 // MARK: - Equatable
 extension ColumnConfiguration: Equatable {
 
 	static func == (lhs: ColumnConfiguration, rhs: ColumnConfiguration) -> Bool {
-		return lhs.id == rhs.id
-		&& lhs.title == rhs.title
-		&& lhs.placeholder == rhs.placeholder
-		&& lhs.menu == rhs.menu
+		return lhs.id == rhs.id && lhs.header == rhs.header
 	}
 }

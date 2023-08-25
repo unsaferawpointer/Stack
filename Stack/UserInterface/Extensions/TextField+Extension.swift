@@ -1,5 +1,5 @@
 //
-//  NSTextField+Extension.swift
+//  TextField+Extension.swift
 //  Stack
 //
 //  Created by Anton Cherkasov on 17.08.2023.
@@ -7,10 +7,10 @@
 
 import Cocoa
 
-extension NSTextField {
+extension TextField {
 
-	static func plain() -> NSTextField {
-		let field = NSTextField()
+	static func plain() -> TextField {
+		let field = TextField(.empty)
 		field.drawsBackground = false
 		field.isBezeled = false
 		field.cell?.truncatesLastVisibleLine = true

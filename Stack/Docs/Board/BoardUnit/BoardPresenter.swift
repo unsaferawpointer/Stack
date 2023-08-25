@@ -65,16 +65,22 @@ private extension BoardPresenter {
 
 	func makeModel(from content: BoardContent) -> BoardUnitModel {
 		let columns = content.columns.map { column in
-			ColumnConfiguration(
-				id: column.id,
-				title: column.title,
-				placeholder: localization.columnHeaderPlaceholder,
-				menu: makeMenu(column: column)
-			) { [weak self] newTitle in
-				self?.interactor?.renameColumn(newTitle, ofColumn: column.id)
-			}
+			makeColumn(from: column)
 		}
 		return BoardUnitModel(columns: columns)
+	}
+
+	func makeColumn(from column: BoardColumn) -> ColumnConfiguration {
+		let title = TextfieldConfiguration(
+			text: column.title,
+			placeholder: localization.columnHeaderPlaceholder
+		) { [weak self] newTitle in
+			self?.interactor?.renameColumn(newTitle, ofColumn: column.id)
+		}
+		let menu = makeMenu(column: column)
+		let button = MenuButtonConfiguration(imageName: "ellipsis", menu: menu)
+		let header = HeaderConfiguration(title: title, button: button)
+		return .init(id: column.id, header: header)
 	}
 
 	func makeMenu(column: BoardColumn) -> MenuConfiguration {

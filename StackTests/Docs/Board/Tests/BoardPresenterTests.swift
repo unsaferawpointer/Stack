@@ -97,7 +97,7 @@ extension BoardPresenterTests {
 			return XCTFail("`display` must be invocked")
 		}
 
-		let menu = try XCTUnwrap(model.columns.first?.menu)
+		let menu = try XCTUnwrap(model.columns.first?.header.button.menu)
 
 		let itemOfDeletion = menu.items[5]
 		guard case .menuItem(let configuration) = itemOfDeletion else {
@@ -135,7 +135,7 @@ extension BoardPresenterTests {
 			return XCTFail("`display` must be invocked")
 		}
 
-		let menu = try XCTUnwrap(model.columns.first?.menu)
+		let menu = try XCTUnwrap(model.columns.first?.header.button.menu)
 
 		let itemOfForwardMoving = menu.items[2]
 		guard case .menuItem(let configuration) = itemOfForwardMoving else {
@@ -172,7 +172,7 @@ extension BoardPresenterTests {
 			return XCTFail("`display` must be invocked")
 		}
 
-		let menu = try XCTUnwrap(model.columns.first?.menu)
+		let menu = try XCTUnwrap(model.columns.first?.header.button.menu)
 
 		let itemOfForwardMoving = menu.items[3]
 		guard case .menuItem(let configuration) = itemOfForwardMoving else {
@@ -214,7 +214,7 @@ extension BoardPresenterTests {
 		let column1Model = try XCTUnwrap(model.columns.first)
 
 		// Act
-		column1Model.action?(expectedTitle)
+		column1Model.header.title.action?(expectedTitle)
 
 		// Assert
 		XCTAssertEqual(interactor.invocations.count, 1)
@@ -259,16 +259,16 @@ extension BoardPresenterTests {
 		let column1Model = model.columns[0]
 
 		XCTAssertEqual(column1Model.id, column1.id)
-		XCTAssertEqual(column1Model.title, column1.title)
-		XCTAssertEqual(column1Model.placeholder, placeholder)
-		XCTAssertEqual(column1Model.menu?.items.count, 6)
+		XCTAssertEqual(column1Model.header.title.text, column1.title)
+		XCTAssertEqual(column1Model.header.title.placeholder, placeholder)
+		XCTAssertEqual(column1Model.header.button.menu.items.count, 6)
 
 		let column2Model = model.columns[1]
 
 		XCTAssertEqual(column2Model.id, column2.id)
-		XCTAssertEqual(column2Model.title, column2.title)
-		XCTAssertEqual(column2Model.placeholder, placeholder)
-		XCTAssertEqual(column2Model.menu?.items.count, 6)
+		XCTAssertEqual(column2Model.header.title.text, column2.title)
+		XCTAssertEqual(column2Model.header.title.placeholder, placeholder)
+		XCTAssertEqual(column2Model.header.button.menu.items.count, 6)
 
 		XCTAssertTrue(interactor.invocations.isEmpty)
 	}
