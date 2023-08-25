@@ -55,6 +55,20 @@
 		4C4A34372A991CA500594B94 /* List_v1_broken.stacklist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A34362A991CA500594B94 /* List_v1_broken.stacklist */; };
 		4C4A34392A991CC900594B94 /* List_v1_no_version.stacklist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A34382A991CC900594B94 /* List_v1_no_version.stacklist */; };
 		4C4A343B2A991D0700594B94 /* List_v1_invalid_version.stacklist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A343A2A991D0700594B94 /* List_v1_invalid_version.stacklist */; };
+		4C4A343E2A991E5C00594B94 /* ListUnitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A343D2A991E5C00594B94 /* ListUnitAssembly.swift */; };
+		4C4A34402A991E8100594B94 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A343F2A991E8100594B94 /* ListViewController.swift */; };
+		4C4A34422A991E9400594B94 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34412A991E9400594B94 /* ListPresenter.swift */; };
+		4C4A34442A991EA000594B94 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34432A991EA000594B94 /* ListInteractor.swift */; };
+		4C4A34472A991F7B00594B94 /* ListLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34462A991F7B00594B94 /* ListLocalization.swift */; };
+		4C4A34492A991FAE00594B94 /* ListLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A34482A991FAE00594B94 /* ListLocalizable.strings */; };
+		4C4A344B2A991FEB00594B94 /* ListUnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A344A2A991FEB00594B94 /* ListUnitModel.swift */; };
+		4C4A344E2A99226D00594B94 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A344D2A99226D00594B94 /* ListPresenterTests.swift */; };
+		4C4A34502A9922BA00594B94 /* ListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A344F2A9922BA00594B94 /* ListInteractorMock.swift */; };
+		4C4A34522A99234300594B94 /* ListViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34512A99234300594B94 /* ListViewMock.swift */; };
+		4C4A34542A9923B000594B94 /* ListLocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34532A9923B000594B94 /* ListLocalizationMock.swift */; };
+		4C4A34562A9930A300594B94 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34552A9930A300594B94 /* ListInteractorTests.swift */; };
+		4C4A34582A9930D500594B94 /* ListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34572A9930D500594B94 /* ListPresenterMock.swift */; };
+		4C4A345A2A99310000594B94 /* ListDataPublisherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34592A99310000594B94 /* ListDataPublisherMock.swift */; };
 		4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644BE2A82B42C00184C1B /* AppDelegate.swift */; };
 		4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C02A82B42C00184C1B /* BoardViewController.swift */; };
 		4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C22A82B42C00184C1B /* BoardDocument.swift */; };
@@ -142,6 +156,20 @@
 		4C4A34362A991CA500594B94 /* List_v1_broken.stacklist */ = {isa = PBXFileReference; lastKnownFileType = text; path = List_v1_broken.stacklist; sourceTree = "<group>"; };
 		4C4A34382A991CC900594B94 /* List_v1_no_version.stacklist */ = {isa = PBXFileReference; lastKnownFileType = text; path = List_v1_no_version.stacklist; sourceTree = "<group>"; };
 		4C4A343A2A991D0700594B94 /* List_v1_invalid_version.stacklist */ = {isa = PBXFileReference; lastKnownFileType = text; path = List_v1_invalid_version.stacklist; sourceTree = "<group>"; };
+		4C4A343D2A991E5C00594B94 /* ListUnitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUnitAssembly.swift; sourceTree = "<group>"; };
+		4C4A343F2A991E8100594B94 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4C4A34412A991E9400594B94 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		4C4A34432A991EA000594B94 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		4C4A34462A991F7B00594B94 /* ListLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocalization.swift; sourceTree = "<group>"; };
+		4C4A34482A991FAE00594B94 /* ListLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ListLocalizable.strings; sourceTree = "<group>"; };
+		4C4A344A2A991FEB00594B94 /* ListUnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUnitModel.swift; sourceTree = "<group>"; };
+		4C4A344D2A99226D00594B94 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		4C4A344F2A9922BA00594B94 /* ListInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorMock.swift; sourceTree = "<group>"; };
+		4C4A34512A99234300594B94 /* ListViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewMock.swift; sourceTree = "<group>"; };
+		4C4A34532A9923B000594B94 /* ListLocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocalizationMock.swift; sourceTree = "<group>"; };
+		4C4A34552A9930A300594B94 /* ListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		4C4A34572A9930D500594B94 /* ListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterMock.swift; sourceTree = "<group>"; };
+		4C4A34592A99310000594B94 /* ListDataPublisherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataPublisherMock.swift; sourceTree = "<group>"; };
 		4C8644BB2A82B42C00184C1B /* Stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8644BE2A82B42C00184C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8644C02A82B42C00184C1B /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +444,7 @@
 		4C4A34212A99153200594B94 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				4C4A343C2A991E4500594B94 /* ListUnit */,
 				4C4A34222A99154400594B94 /* Models */,
 				4C4A34252A9916C900594B94 /* ListDocument.swift */,
 				4C4A34292A9917A600594B94 /* ListDataProvider.swift */,
@@ -445,6 +474,11 @@
 		4C4A342C2A991AAC00594B94 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				4C4A344F2A9922BA00594B94 /* ListInteractorMock.swift */,
+				4C4A34512A99234300594B94 /* ListViewMock.swift */,
+				4C4A34532A9923B000594B94 /* ListLocalizationMock.swift */,
+				4C4A34572A9930D500594B94 /* ListPresenterMock.swift */,
+				4C4A34592A99310000594B94 /* ListDataPublisherMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -453,6 +487,8 @@
 			isa = PBXGroup;
 			children = (
 				4C4A342F2A991AE700594B94 /* ListDataProviderTests.swift */,
+				4C4A344D2A99226D00594B94 /* ListPresenterTests.swift */,
+				4C4A34552A9930A300594B94 /* ListInteractorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -475,6 +511,28 @@
 				4C4A343A2A991D0700594B94 /* List_v1_invalid_version.stacklist */,
 			);
 			path = V1;
+			sourceTree = "<group>";
+		};
+		4C4A343C2A991E4500594B94 /* ListUnit */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A343D2A991E5C00594B94 /* ListUnitAssembly.swift */,
+				4C4A343F2A991E8100594B94 /* ListViewController.swift */,
+				4C4A34412A991E9400594B94 /* ListPresenter.swift */,
+				4C4A34432A991EA000594B94 /* ListInteractor.swift */,
+				4C4A344A2A991FEB00594B94 /* ListUnitModel.swift */,
+				4C4A34452A991F6200594B94 /* Localization */,
+			);
+			path = ListUnit;
+			sourceTree = "<group>";
+		};
+		4C4A34452A991F6200594B94 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A34462A991F7B00594B94 /* ListLocalization.swift */,
+				4C4A34482A991FAE00594B94 /* ListLocalizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		4C8644B22A82B42C00184C1B = {
@@ -696,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8644C52A82B42D00184C1B /* Assets.xcassets in Resources */,
+				4C4A34492A991FAE00594B94 /* ListLocalizable.strings in Resources */,
 				4C8644C82A82B42D00184C1B /* Main.storyboard in Resources */,
 				4CF80C862A90AF8200E985A5 /* BoardLocalizable.strings in Resources */,
 			);
@@ -734,7 +793,9 @@
 			files = (
 				4C4A342A2A9917A600594B94 /* ListDataProvider.swift in Sources */,
 				4C1D14AC2A8EB9BE005691BD /* TextField+Extension.swift in Sources */,
+				4C4A34472A991F7B00594B94 /* ListLocalization.swift in Sources */,
 				4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */,
+				4C4A34442A991EA000594B94 /* ListInteractor.swift in Sources */,
 				4CBCF2A62A9912BF004E62C9 /* HeaderConfiguration.swift in Sources */,
 				4CBCF29A2A98F2C6004E62C9 /* MenuButton.swift in Sources */,
 				4C0C5C332A877F0D0025B3C8 /* BoardContent.swift in Sources */,
@@ -743,6 +804,7 @@
 				4CBCF2972A98F119004E62C9 /* NSButton+Extension.swift in Sources */,
 				4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */,
 				4C0C5C2F2A877E860025B3C8 /* BoardColumn.swift in Sources */,
+				4C4A344B2A991FEB00594B94 /* ListUnitModel.swift in Sources */,
 				4C0C5C512A881FCE0025B3C8 /* DocumentError.swift in Sources */,
 				4C1D14942A8D5514005691BD /* BoardPresenter.swift in Sources */,
 				4C0C5C312A877E950025B3C8 /* Card.swift in Sources */,
@@ -753,11 +815,14 @@
 				4C0C5C452A87CA370025B3C8 /* DocumentFile.swift in Sources */,
 				4C05C1532A8D35CF00AF6036 /* DocumentDataRepresentation.swift in Sources */,
 				4C4A34282A99170700594B94 /* ListContent.swift in Sources */,
+				4C4A34402A991E8100594B94 /* ListViewController.swift in Sources */,
+				4C4A343E2A991E5C00594B94 /* ListUnitAssembly.swift in Sources */,
 				4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */,
 				4C4A34262A9916C900594B94 /* ListDocument.swift in Sources */,
 				4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */,
 				4C0C5C472A87CFA70025B3C8 /* BoardDataProvider.swift in Sources */,
 				4C05C14A2A8A8A0600AF6036 /* DocumentStorage.swift in Sources */,
+				4C4A34422A991E9400594B94 /* ListPresenter.swift in Sources */,
 				4C0C5C392A8782280025B3C8 /* ContentProvider.swift in Sources */,
 				4CBCF2912A98B602004E62C9 /* NSView+Extension.swift in Sources */,
 				4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */,
@@ -779,17 +844,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C1D14B32A8FCAFC005691BD /* BoardInteractorMock.swift in Sources */,
+				4C4A34502A9922BA00594B94 /* ListInteractorMock.swift in Sources */,
 				4C1D14BB2A8FF07A005691BD /* BoardDataPublisherMock.swift in Sources */,
 				4C05C15F2A8D376900AF6036 /* ContentProviderMock.swift in Sources */,
 				4C05C1582A8D363200AF6036 /* DocumentStorageTests.swift in Sources */,
+				4C4A344E2A99226D00594B94 /* ListPresenterTests.swift in Sources */,
+				4C4A34582A9930D500594B94 /* ListPresenterMock.swift in Sources */,
 				4C1D14B52A8FE5ED005691BD /* BoardViewMock.swift in Sources */,
 				4CF80C832A909D3400E985A5 /* BoardLocalizationMock.swift in Sources */,
 				4C4A34302A991AE700594B94 /* ListDataProviderTests.swift in Sources */,
+				4C4A34542A9923B000594B94 /* ListLocalizationMock.swift in Sources */,
 				4C05C1612A8D384E00AF6036 /* Data+Extension.swift in Sources */,
 				4C1D14B72A8FEE94005691BD /* BoardInteractorTests.swift in Sources */,
 				4C1D14B02A8FCA38005691BD /* BoardPresenterTests.swift in Sources */,
 				4C05C15B2A8D36DE00AF6036 /* String+Extension.swift in Sources */,
 				4C0C5C4B2A87F40C0025B3C8 /* BoardDataProviderTests.swift in Sources */,
+				4C4A345A2A99310000594B94 /* ListDataPublisherMock.swift in Sources */,
+				4C4A34522A99234300594B94 /* ListViewMock.swift in Sources */,
+				4C4A34562A9930A300594B94 /* ListInteractorTests.swift in Sources */,
 				4C1D14B92A8FEEFF005691BD /* BoardPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
