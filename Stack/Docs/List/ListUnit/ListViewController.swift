@@ -25,6 +25,10 @@ protocol ListView {
 
 class ListViewController: NSViewController {
 
+	// MARK: - Data
+
+	var items: [ListUnitModel.TaskModel] = []
+
 	// MARK: - DI
 
 	var output: ListViewOutput?
@@ -33,9 +37,12 @@ class ListViewController: NSViewController {
 
 	lazy private var scrollview = NSScrollView.plain()
 
-	lazy var list: NSOutlineView = {
-		let view = NSOutlineView()
+	lazy var table: NSTableView = {
+		let view = NSTableView()
+		view.dataSource = self
+		view.delegate = self
 		view.usesAlternatingRowBackgroundColors = true
+		view.columnAutoresizingStyle = .reverseSequentialColumnAutoresizingStyle
 		return view
 	}()
 
@@ -73,17 +80,31 @@ class ListViewController: NSViewController {
 extension ListViewController: ListView {
 
 	func display(_ model: ListUnitModel) {
-		// TODO: - Handle action
+		self.items = model.items
+		table.reloadData()
 	}
 }
 
+// MARK: - Helpers
 private extension ListViewController {
 
 	func configureUserInterface() {
 
-		scrollview.documentView = list
+		scrollview.documentView = table
 
-		let column = NSTableColumn(identifier: .init("main"))
-		list.addTableColumn(column)
+		table
+			.addColumn(.status, withTitle: "􀆅", style: .toggle)
+			.addColumn(.text, withTitle: "Task description", style: .flexible(min: 180, max: nil))
+			.addColumn(.isUrgent, withTitle: "􀋦", style: .toggle)
 	}
+
+}
+
+extension NSUserInterfaceItemIdentifier {
+
+	static let text = NSUserInterfaceItemIdentifier("text")
+
+	static let isUrgent = NSUserInterfaceItemIdentifier("is_urgent")
+
+	static let status = NSUserInterfaceItemIdentifier("status")
 }

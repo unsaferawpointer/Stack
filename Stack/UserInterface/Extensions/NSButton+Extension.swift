@@ -19,6 +19,16 @@ extension NSButton {
 		return view
 	}
 
+	static func toggle() -> NSButton {
+		let view = NSButton()
+		view.setButtonType(.toggle)
+		view.isBordered = false
+		view.bezelStyle = .texturedRounded
+		view.imagePosition = .imageOnly
+		view.cell?.isBezeled = false
+		return view
+	}
+
 	func withImage(systemName: String) -> Self {
 		self.image = NSImage(
 			systemSymbolName: systemName,

@@ -6,9 +6,26 @@
 //
 
 import Foundation
+import DesignSystem
 
 struct ListUnitModel {
 
-	/// Displayed tasks
-	var tasks: [ColumnConfiguration] = []
+	/// Items displayed by table
+	var items: [TaskModel] = []
+}
+
+// MARK: - Nested data structs
+extension ListUnitModel {
+
+	/// Task view-model
+	struct TaskModel {
+
+		var id: UUID
+
+		var text: String
+
+		var isDone: Bool
+
+		var isFavorite: Bool
+	}
 }

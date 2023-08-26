@@ -8,6 +8,7 @@
 import Foundation
 import DesignSystem
 
+/// List unit presenter Interface
 protocol ListUnitPresenter: AnyObject {
 	func present(_ content: ListContent)
 }
@@ -60,6 +61,15 @@ extension ListPresenter: ListViewOutput {
 private extension ListPresenter {
 
 	func makeModel(from content: ListContent) -> ListUnitModel {
-		return ListUnitModel()
+
+		let items = content.tasks.map {
+			ListUnitModel.TaskModel(
+				id: $0.id,
+				text: $0.text,
+				isDone: false,
+				isFavorite: $0.category.contains(.urgent)
+			)
+		}
+		return ListUnitModel(items: items)
 	}
 }

@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import DesignSystem
 
 protocol BoardViewOutput {
 
