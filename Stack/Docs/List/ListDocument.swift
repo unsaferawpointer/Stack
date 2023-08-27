@@ -30,7 +30,7 @@ class ListDocument: NSDocument {
 		// Returns the Storyboard that contains your Document window.
 		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 		let windowController = storyboard.instantiateController(
-			withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")
+			withIdentifier: NSStoryboard.SceneIdentifier("Backlog Window Controller")
 		) as! NSWindowController
 		windowController.window?.contentViewController = ListUnitAssembly().build(storage: storage)
 		self.addWindowController(windowController)
