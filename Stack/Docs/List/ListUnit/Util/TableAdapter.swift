@@ -123,6 +123,17 @@ private extension TableAdapter {
 // MARK: - Common interface
 extension TableAdapter {
 
+	func scrollTo(_ id: UUID) {
+		guard let table, let first = snapshot.indexes(for: Set([id])).first else {
+			return
+		}
+		NSAnimationContext.runAnimationGroup { context in
+			context.allowsImplicitAnimation = true
+			context.duration = 0.3
+			table.scrollRowToVisible(first)
+		}
+	}
+
 	func performAnimation(_ new: DataSnapshot<Model>) {
 
 		guard let table else {

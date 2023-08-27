@@ -75,7 +75,7 @@ extension NSTableView {
 		self.removeRows(at: .init(integer: index), withAnimation: animation)
 	}
 
-	func insertRows(at index: Int, withAnimation animation: AnimationOptions = [.effectFade, .slideUp]) {
+	func insertRows(at index: Int, withAnimation animation: AnimationOptions = [.effectFade, .slideRight]) {
 		self.insertRows(at: .init(integer: index), withAnimation: animation)
 	}
 }

@@ -13,10 +13,17 @@ final class ListLocalizationMock {
 }
 
 // MARK: - ListUnitLocalization
-extension ListLocalizationMock: ListUnitLocalization { }
+extension ListLocalizationMock: ListUnitLocalization {
+
+	var defaultTaskText: String {
+		stubs.defaultTaskText
+	}
+}
 
 // MARK: - Nested data structs
 extension ListLocalizationMock {
 
-	struct Stubs { }
+	struct Stubs {
+		var defaultTaskText: String = .random
+	}
 }

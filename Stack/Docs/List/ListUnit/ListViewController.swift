@@ -12,6 +12,9 @@ protocol ListViewOutput {
 
 	/// View did change life-cycle state
 	func viewDidChange(_ state: ViewState)
+
+	/// Toolbar button to create new has been clicked
+	func createNew()
 }
 
 protocol ListView {
@@ -21,6 +24,9 @@ protocol ListView {
 	/// - Parameters:
 	///    - model: Displayed model
 	func display(_ model: ListUnitModel)
+
+	/// Scroll to specific identifier
+	func scrollTo(_ id: UUID)
 }
 
 class ListViewController: NSViewController {
@@ -41,6 +47,8 @@ class ListViewController: NSViewController {
 		let view = NSTableView()
 		view.usesAlternatingRowBackgroundColors = true
 		view.allowsMultipleSelection = true
+		view.rowHeight = 36
+		view.rowSizeStyle = .custom
 		view.columnAutoresizingStyle = .reverseSequentialColumnAutoresizingStyle
 		return view
 	}()
@@ -83,6 +91,10 @@ extension ListViewController: ListView {
 		let snapshot = DataSnapshot(items: model.items)
 		adapter?.performAnimation(snapshot)
 	}
+
+	func scrollTo(_ id: UUID) {
+		adapter?.scrollTo(id)
+	}
 }
 
 // MARK: - Helpers
@@ -96,5 +108,14 @@ private extension ListViewController {
 			.addColumn(.status, withTitle: "􀆅", style: .toggle)
 			.addColumn(.text, withTitle: "Task description", style: .flexible(min: 180, max: nil))
 			.addColumn(.isUrgent, withTitle: "􀋦", style: .toggle)
+	}
+}
+
+// MARK: - Actions
+extension ListViewController {
+
+	@IBAction
+	func createNew(_ sender: Any) {
+		output?.createNew()
 	}
 }

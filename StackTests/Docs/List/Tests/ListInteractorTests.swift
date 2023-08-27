@@ -52,6 +52,22 @@ extension ListInteractorTests {
 		XCTAssertEqual(expectedContent, storage.stubs.state)
 		XCTAssertEqual(storage.invocations, [.addObservation])
 	}
+
+	func test_createTask() throws {
+		// Arrange
+		let text: String = .random
+		storage.stubs.state = .initial
+		storage.invocations.removeAll()
+
+		// Act
+		sut.createTask(withText: text) { id in
+
+		}
+
+		// Assert
+		XCTAssertEqual(storage.stubs.modificated.tasks.count, 1)
+		XCTAssertEqual(storage.invocations, [.modificate])
+	}
 }
 
 // MARK: - Common cases

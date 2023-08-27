@@ -746,6 +746,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="createNew:" target="zDo-gV-y2K" id="0kS-dS-9rC"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
                             </allowedToolbarItems>

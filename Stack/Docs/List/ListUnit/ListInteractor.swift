@@ -12,6 +12,13 @@ protocol ListUnitInteractor: AnyObject {
 
 	/// Fetch data
 	func fetchData(_ completionBlock: (ListContent) -> Void)
+
+	/// Create new task
+	///
+	/// - Parameters:
+	///    - text: Task text
+	///    - completionHandler: Completion handler
+	func createTask(withText text: String, completionHandler: (UUID) -> Void)
 }
 
 /// `List` unit interactor
@@ -38,6 +45,14 @@ extension ListInteractor: ListUnitInteractor {
 
 	func fetchData(_ completionBlock: (ListContent) -> Void) {
 		completionBlock(storage.state)
+	}
+
+	func createTask(withText text: String, completionHandler: (UUID) -> Void) {
+		let new = TaskItem(text: text)
+		storage.modificate { state in
+			state.tasks.append(new)
+		}
+		completionHandler(new.id)
 	}
 }
 

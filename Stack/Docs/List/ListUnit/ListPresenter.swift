@@ -55,6 +55,12 @@ extension ListPresenter: ListViewOutput {
 			self?.present(content)
 		}
 	}
+
+	func createNew() {
+		interactor?.createTask(withText: localization.defaultTaskText) { [weak self] id in
+			self?.view?.scrollTo(id)
+		}
+	}
 }
 
 // MARK: - Helpers

@@ -57,6 +57,26 @@ extension ListPresenterTests {
 			return XCTFail("`display` must be invocked")
 		}
 	}
+
+	func test_createNew() throws {
+		// Act
+		sut.createNew()
+
+		// Assert
+		XCTAssertEqual(interactor.invocations.count, 1)
+		guard case let .createTask(text) = interactor.invocations.first else {
+			return XCTFail("`createTask` must be invocked")
+		}
+
+		XCTAssertEqual(text, localization.defaultTaskText)
+
+		XCTAssertEqual(view.invocations.count, 1)
+		guard case let .scrollTo(id) = view.invocations.first else {
+			return XCTFail("`scrollTo` must be invocked")
+		}
+
+		XCTAssertEqual(id, interactor.stubs.createdTaskIdentifier)
+	}
 }
 
 // MARK: - ListUnitPresenter

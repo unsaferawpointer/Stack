@@ -8,13 +8,21 @@
 import Foundation
 
 /// List Unit localization
-protocol ListUnitLocalization { }
+protocol ListUnitLocalization {
+
+	var defaultTaskText: String { get }
+}
 
 /// List Unit localization
 final class ListLocalization { }
 
 // MARK: - ListUnitLocalization
-extension ListLocalization: ListUnitLocalization { }
+extension ListLocalization: ListUnitLocalization {
+
+	var defaultTaskText: String {
+		return "default_task_text".localized()
+	}
+}
 
 private extension String {
 

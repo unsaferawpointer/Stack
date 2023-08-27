@@ -22,6 +22,11 @@ extension ListInteractorMock: ListUnitInteractor {
 		invocations.append(.fetchData)
 		completionBlock(stubs.fetchData)
 	}
+
+	func createTask(withText text: String, completionHandler: (UUID) -> Void) {
+		invocations.append(.createTask(text: text))
+		completionHandler(stubs.createdTaskIdentifier)
+	}
 }
 
 // MARK: - Nested data structs
@@ -29,9 +34,11 @@ extension ListInteractorMock {
 
 	enum Action {
 		case fetchData
+		case createTask(text: String)
 	}
 
 	struct Stubs {
 		var fetchData: ListContent = .initial
+		var createdTaskIdentifier: UUID = UUID()
 	}
 }

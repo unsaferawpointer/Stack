@@ -5,3 +5,5 @@
   Created by Anton Cherkasov on 25.08.2023.
   
 */
+
+"default_task_text" = "New task";
