@@ -32,6 +32,7 @@ class BoardDocument: NSDocument {
 		let windowController = storyboard.instantiateController(
 			withIdentifier: NSStoryboard.SceneIdentifier("Board Window Controller")
 		) as! NSWindowController
+		windowController.window?.minSize = .init(width: 360, height: 360)
 		windowController.window?.contentViewController = BoardUnitAssembly().build(storage: storage)
 		self.addWindowController(windowController)
 	}

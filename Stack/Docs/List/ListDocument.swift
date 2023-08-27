@@ -32,6 +32,7 @@ class ListDocument: NSDocument {
 		let windowController = storyboard.instantiateController(
 			withIdentifier: NSStoryboard.SceneIdentifier("Backlog Window Controller")
 		) as! NSWindowController
+		windowController.window?.minSize = .init(width: 360, height: 360)
 		windowController.window?.contentViewController = ListUnitAssembly().build(storage: storage)
 		self.addWindowController(windowController)
 	}
