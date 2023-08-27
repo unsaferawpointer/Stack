@@ -7,6 +7,12 @@
 				"category" : 1,
 				"id" : "F59AB097-7B8C-4B09-BFA9-DD075BC543D1",
 				"estimation" : 0,
+				"status" : {
+					"inProgress" : {
+						"start" : 100,
+						"progress" : 0.5
+					}
+				},
 				"tag" : null,
 				"text" : "task0"
 			},
@@ -14,6 +20,12 @@
 				"category" : 0,
 				"id" : "F19F1EB8-0C9F-4B16-97F0-CB3BE864637D",
 				"estimation" : 13,
+				"status" : {
+					"done" : {
+						"start" : 100,
+						"end" : 1000
+					}
+				},
 				"tag" : null,
 				"text" : "task1"
 			},
@@ -21,6 +33,11 @@
 				"category" : 1,
 				"id" : "6B4D75CF-97D5-48CD-B664-7A048A4C0AB6",
 				"estimation" : 7,
+				"status" : {
+					"todo" : {
+
+					}
+				},
 				"tag" : "tag2",
 				"text" : "task2"
 			}

@@ -111,27 +111,27 @@ private extension ListDataProviderTests {
 				[
 					TaskItem(
 						id: UUID(uuidString: "F59AB097-7B8C-4B09-BFA9-DD075BC543D1")!,
+						status: .inProgress(start: Date(timeIntervalSince1970: 100), progress: 0.5),
 						text: "task0",
 						tag: nil,
 						category: .urgent,
-						estimation: 0,
-						subtasks: nil
+						estimation: 0
 					),
 					TaskItem(
 						id: UUID(uuidString: "F19F1EB8-0C9F-4B16-97F0-CB3BE864637D")!,
+						status: .done(start: Date(timeIntervalSince1970: 100), end: Date(timeIntervalSince1970: 1000)),
 						text: "task1",
 						tag: nil,
 						category: [],
-						estimation: 13,
-						subtasks: nil
+						estimation: 13
 					),
 					TaskItem(
 						id: UUID(uuidString: "6B4D75CF-97D5-48CD-B664-7A048A4C0AB6")!,
+						status: .todo,
 						text: "task2",
 						tag: "tag2",
 						category: .urgent,
-						estimation: 7,
-						subtasks: nil
+						estimation: 7
 					)
 				]
 		)

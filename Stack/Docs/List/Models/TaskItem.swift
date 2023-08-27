@@ -11,6 +11,8 @@ struct TaskItem {
 
 	let id: UUID
 
+	var status: TaskStatus
+
 	var text: String
 
 	var tag: String?
@@ -19,22 +21,20 @@ struct TaskItem {
 
 	var estimation: Int
 
-	var subtasks: [TaskItem]?
-
 	init(
 		id: UUID = UUID(),
+		status: TaskStatus = .todo,
 		text: String,
 		tag: String? = nil,
 		category: Category = [],
-		estimation: Int = 0,
-		subtasks: [TaskItem]? = []
+		estimation: Int = 0
 	) {
 		self.id = id
+		self.status = status
 		self.text = text
 		self.tag = tag
 		self.category = category
 		self.estimation = estimation
-		self.subtasks = subtasks
 	}
 }
 
@@ -43,11 +43,11 @@ extension TaskItem: Codable {
 
 	enum CodingKeys: CodingKey {
 		case id
+		case status
 		case text
 		case tag
 		case category
 		case estimation
-		case subtasks
 	}
 
 	init(from decoder: Decoder) throws {
@@ -59,14 +59,14 @@ extension TaskItem: Codable {
 		let tag = try container.decodeIfPresent(String.self, forKey: .tag)
 		let category = try container.decode(Category.self, forKey: .category)
 		let estimation = try container.decode(Int.self, forKey: .estimation)
-		let subtasks = try container.decodeIfPresent([TaskItem].self, forKey: .subtasks)
+		let status = try container.decode(TaskStatus.self, forKey: .status)
 		self.init(
 			id: id,
+			status: status,
 			text: text,
 			tag: tag,
 			category: category,
-			estimation: estimation,
-			subtasks: subtasks
+			estimation: estimation
 		)
 	}
 
@@ -75,11 +75,11 @@ extension TaskItem: Codable {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 
 		try container.encode(id, forKey: .id)
+		try container.encode(status, forKey: .status)
 		try container.encode(text, forKey: .text)
 		try container.encode(tag, forKey: .tag)
 		try container.encode(category, forKey: .category)
 		try container.encode(estimation, forKey: .estimation)
-		try container.encode(subtasks, forKey: .subtasks)
 	}
 }
 
