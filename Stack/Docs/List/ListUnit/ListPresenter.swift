@@ -62,12 +62,12 @@ private extension ListPresenter {
 
 	func makeModel(from content: ListContent) -> ListUnitModel {
 
-		let items = content.tasks.map {
+		let items = content.tasks.map { item in
 			ListUnitModel.TaskModel(
-				id: $0.id,
-				text: $0.text,
+				id: item.id,
+				text: item.text,
 				isDone: false,
-				isFavorite: $0.category.contains(.urgent)
+				isUrgent: item.category.contains(.urgent)
 			)
 		}
 		return ListUnitModel(items: items)

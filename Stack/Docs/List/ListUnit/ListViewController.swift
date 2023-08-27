@@ -27,7 +27,7 @@ class ListViewController: NSViewController {
 
 	// MARK: - Data
 
-	var items: [ListUnitModel.TaskModel] = []
+	var adapter: TableAdapter?
 
 	// MARK: - DI
 
@@ -39,9 +39,8 @@ class ListViewController: NSViewController {
 
 	lazy var table: NSTableView = {
 		let view = NSTableView()
-		view.dataSource = self
-		view.delegate = self
 		view.usesAlternatingRowBackgroundColors = true
+		view.allowsMultipleSelection = true
 		view.columnAutoresizingStyle = .reverseSequentialColumnAutoresizingStyle
 		return view
 	}()
@@ -67,6 +66,7 @@ class ListViewController: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.adapter = TableAdapter(table: table)
 		output?.viewDidChange(.didLoad)
 	}
 
@@ -80,8 +80,8 @@ class ListViewController: NSViewController {
 extension ListViewController: ListView {
 
 	func display(_ model: ListUnitModel) {
-		self.items = model.items
-		table.reloadData()
+		let snapshot = DataSnapshot(items: model.items)
+		adapter?.performAnimation(snapshot)
 	}
 }
 
@@ -97,14 +97,4 @@ private extension ListViewController {
 			.addColumn(.text, withTitle: "Task description", style: .flexible(min: 180, max: nil))
 			.addColumn(.isUrgent, withTitle: "􀋦", style: .toggle)
 	}
-
-}
-
-extension NSUserInterfaceItemIdentifier {
-
-	static let text = NSUserInterfaceItemIdentifier("text")
-
-	static let isUrgent = NSUserInterfaceItemIdentifier("is_urgent")
-
-	static let status = NSUserInterfaceItemIdentifier("status")
 }

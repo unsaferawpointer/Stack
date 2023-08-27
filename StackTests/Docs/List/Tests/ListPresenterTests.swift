@@ -86,7 +86,7 @@ extension ListPresenterTests {
 		XCTAssertEqual(taskModel0.id, taskItem0.id)
 		XCTAssertEqual(taskModel0.text, taskItem0.text)
 		XCTAssertEqual(taskModel0.isDone, false)
-		XCTAssertEqual(taskModel0.isFavorite, taskItem0.category.contains(.urgent))
+		XCTAssertEqual(taskModel0.isUrgent, taskItem0.category.contains(.urgent))
 	}
 }
 

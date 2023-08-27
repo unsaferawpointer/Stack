@@ -80,8 +80,6 @@
 		4C4A349B2A9A7BD800594B94 /* HStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A349A2A9A7BD800594B94 /* HStackView.swift */; };
 		4C4A349F2A9A7C9600594B94 /* ToggleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A349E2A9A7C9600594B94 /* ToggleItem.swift */; };
 		4C4A34A12A9A7CCA00594B94 /* TextFieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34A02A9A7CCA00594B94 /* TextFieldItem.swift */; };
-		4C4A34A32A9A7F3100594B94 /* ListViewController+TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34A22A9A7F3100594B94 /* ListViewController+TableDataSource.swift */; };
-		4C4A34A52A9A7F6F00594B94 /* ListViewController+TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A34A42A9A7F6F00594B94 /* ListViewController+TableDelegate.swift */; };
 		4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644BE2A82B42C00184C1B /* AppDelegate.swift */; };
 		4C8644C12A82B42C00184C1B /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C02A82B42C00184C1B /* BoardViewController.swift */; };
 		4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644C22A82B42C00184C1B /* BoardDocument.swift */; };
@@ -90,6 +88,10 @@
 		4C8644DE2A82B42D00184C1B /* StackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DD2A82B42D00184C1B /* StackUITests.swift */; };
 		4C8644E02A82B42D00184C1B /* StackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */; };
 		4CA2A31B2A88263D005D1C45 /* Board_v1_invalid_version.stackboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */; };
+		4CB064292A9B3C9A0075DE4D /* TableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB064282A9B3C9A0075DE4D /* TableAdapter.swift */; };
+		4CB0642D2A9B4D860075DE4D /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB0642C2A9B4D860075DE4D /* Collection+Extension.swift */; };
+		4CB0642F2A9B60280075DE4D /* DataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB0642E2A9B60280075DE4D /* DataSnapshot.swift */; };
+		4CB064312A9B98B30075DE4D /* DataSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB064302A9B98B30075DE4D /* DataSnapshotTests.swift */; };
 		4CBCF2912A98B602004E62C9 /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2902A98B602004E62C9 /* NSView+Extension.swift */; };
 		4CBCF2932A98E073004E62C9 /* NSEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2922A98E073004E62C9 /* NSEdgeInsets+Extension.swift */; };
 		4CBCF2952A98EFB8004E62C9 /* NSScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */; };
@@ -194,8 +196,6 @@
 		4C4A349A2A9A7BD800594B94 /* HStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackView.swift; sourceTree = "<group>"; };
 		4C4A349E2A9A7C9600594B94 /* ToggleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleItem.swift; sourceTree = "<group>"; };
 		4C4A34A02A9A7CCA00594B94 /* TextFieldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldItem.swift; sourceTree = "<group>"; };
-		4C4A34A22A9A7F3100594B94 /* ListViewController+TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TableDataSource.swift"; sourceTree = "<group>"; };
-		4C4A34A42A9A7F6F00594B94 /* ListViewController+TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TableDelegate.swift"; sourceTree = "<group>"; };
 		4C8644BB2A82B42C00184C1B /* Stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8644BE2A82B42C00184C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8644C02A82B42C00184C1B /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +209,10 @@
 		4C8644DD2A82B42D00184C1B /* StackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITests.swift; sourceTree = "<group>"; };
 		4C8644DF2A82B42D00184C1B /* StackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4CA2A31A2A88263D005D1C45 /* Board_v1_invalid_version.stackboard */ = {isa = PBXFileReference; lastKnownFileType = text; path = Board_v1_invalid_version.stackboard; sourceTree = "<group>"; };
+		4CB064282A9B3C9A0075DE4D /* TableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapter.swift; sourceTree = "<group>"; };
+		4CB0642C2A9B4D860075DE4D /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		4CB0642E2A9B60280075DE4D /* DataSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshot.swift; sourceTree = "<group>"; };
+		4CB064302A9B98B30075DE4D /* DataSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSnapshotTests.swift; sourceTree = "<group>"; };
 		4CBCF2902A98B602004E62C9 /* NSView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
 		4CBCF2922A98E073004E62C9 /* NSEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Extension.swift"; sourceTree = "<group>"; };
@@ -516,6 +520,7 @@
 				4C4A342F2A991AE700594B94 /* ListDataProviderTests.swift */,
 				4C4A344D2A99226D00594B94 /* ListPresenterTests.swift */,
 				4C4A34552A9930A300594B94 /* ListInteractorTests.swift */,
+				4CB064302A9B98B30075DE4D /* DataSnapshotTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -543,10 +548,9 @@
 		4C4A343C2A991E4500594B94 /* ListUnit */ = {
 			isa = PBXGroup;
 			children = (
+				4CB064272A9B3C7D0075DE4D /* Util */,
 				4C4A343D2A991E5C00594B94 /* ListUnitAssembly.swift */,
 				4C4A343F2A991E8100594B94 /* ListViewController.swift */,
-				4C4A34A22A9A7F3100594B94 /* ListViewController+TableDataSource.swift */,
-				4C4A34A42A9A7F6F00594B94 /* ListViewController+TableDelegate.swift */,
 				4C4A34412A991E9400594B94 /* ListPresenter.swift */,
 				4C4A34432A991EA000594B94 /* ListInteractor.swift */,
 				4C4A344A2A991FEB00594B94 /* ListUnitModel.swift */,
@@ -637,6 +641,7 @@
 				4C8644BE2A82B42C00184C1B /* AppDelegate.swift */,
 				4C8644C92A82B42D00184C1B /* Info.plist */,
 				4C8644CA2A82B42D00184C1B /* Stack.entitlements */,
+				4CB0642A2A9B4D630075DE4D /* Common */,
 				4C0C5C372A87820F0025B3C8 /* Services */,
 				4C0C5C2D2A877E660025B3C8 /* Models */,
 				4C0588192A82BEE300078733 /* Docs */,
@@ -673,6 +678,31 @@
 				4C1D14992A8EA704005691BD /* ViewState.swift */,
 			);
 			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		4CB064272A9B3C7D0075DE4D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4CB064282A9B3C9A0075DE4D /* TableAdapter.swift */,
+				4CB0642E2A9B60280075DE4D /* DataSnapshot.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4CB0642A2A9B4D630075DE4D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4CB0642B2A9B4D6D0075DE4D /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4CB0642B2A9B4D6D0075DE4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CB0642C2A9B4D860075DE4D /* Collection+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4CBCF29D2A990F4F004E62C9 /* DesignSystem */ = {
@@ -880,12 +910,13 @@
 				4CBCF2A62A9912BF004E62C9 /* HeaderConfiguration.swift in Sources */,
 				4CBCF29A2A98F2C6004E62C9 /* MenuButton.swift in Sources */,
 				4C0C5C332A877F0D0025B3C8 /* BoardContent.swift in Sources */,
+				4CB064292A9B3C9A0075DE4D /* TableAdapter.swift in Sources */,
 				4C1D149A2A8EA704005691BD /* ViewState.swift in Sources */,
 				4CBCF2952A98EFB8004E62C9 /* NSScrollView+Extension.swift in Sources */,
+				4CB0642D2A9B4D860075DE4D /* Collection+Extension.swift in Sources */,
 				4CBCF2972A98F119004E62C9 /* NSButton+Extension.swift in Sources */,
 				4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */,
 				4C4A348B2A9A598100594B94 /* ToggleCell.swift in Sources */,
-				4C4A34A32A9A7F3100594B94 /* ListViewController+TableDataSource.swift in Sources */,
 				4C0C5C2F2A877E860025B3C8 /* BoardColumn.swift in Sources */,
 				4C4A349B2A9A7BD800594B94 /* HStackView.swift in Sources */,
 				4C4A344B2A991FEB00594B94 /* ListUnitModel.swift in Sources */,
@@ -918,11 +949,11 @@
 				4C1D14A72A8EB6E1005691BD /* ColumnHeader.swift in Sources */,
 				4C1D14A52A8EB64A005691BD /* ColumnConfiguration.swift in Sources */,
 				4C4A34902A9A76D400594B94 /* ConfigurableView.swift in Sources */,
+				4CB0642F2A9B60280075DE4D /* DataSnapshot.swift in Sources */,
 				4C05C1432A8A7F0700AF6036 /* Category.swift in Sources */,
 				4CBCF2A42A99121C004E62C9 /* MenuButtonConfiguration.swift in Sources */,
 				4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */,
 				4C05C1552A8D35EC00AF6036 /* DocumentDataPublisher.swift in Sources */,
-				4C4A34A52A9A7F6F00594B94 /* ListViewController+TableDelegate.swift in Sources */,
 				4C4A34242A9915B900594B94 /* TaskItem.swift in Sources */,
 				4C1D14982A8EA57E005691BD /* BoardUnitModel.swift in Sources */,
 				4C1D14962A8D552D005691BD /* BoardInteractor.swift in Sources */,
@@ -938,6 +969,7 @@
 				4C1D14B32A8FCAFC005691BD /* BoardInteractorMock.swift in Sources */,
 				4C4A34502A9922BA00594B94 /* ListInteractorMock.swift in Sources */,
 				4C1D14BB2A8FF07A005691BD /* BoardDataPublisherMock.swift in Sources */,
+				4CB064312A9B98B30075DE4D /* DataSnapshotTests.swift in Sources */,
 				4C05C15F2A8D376900AF6036 /* ContentProviderMock.swift in Sources */,
 				4C05C1582A8D363200AF6036 /* DocumentStorageTests.swift in Sources */,
 				4C4A344E2A99226D00594B94 /* ListPresenterTests.swift in Sources */,

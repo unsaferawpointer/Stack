@@ -26,6 +26,9 @@ extension ListUnitModel {
 
 		var isDone: Bool
 
-		var isFavorite: Bool
+		var isUrgent: Bool
 	}
 }
+
+// MARK: - IdentifiableItem
+extension ListUnitModel.TaskModel: IdentifiableItem { }

@@ -67,3 +67,15 @@ extension NSTableView.ColumnStyle {
 		}
 	}
 }
+
+// MARK: - Animations
+extension NSTableView {
+
+	func removeRows(at index: Int, withAnimation animation: AnimationOptions = [.effectFade, .slideDown]) {
+		self.removeRows(at: .init(integer: index), withAnimation: animation)
+	}
+
+	func insertRows(at index: Int, withAnimation animation: AnimationOptions = [.effectFade, .slideUp]) {
+		self.insertRows(at: .init(integer: index), withAnimation: animation)
+	}
+}
