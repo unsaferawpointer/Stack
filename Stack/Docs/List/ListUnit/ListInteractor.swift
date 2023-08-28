@@ -19,6 +19,8 @@ protocol ListUnitInteractor: AnyObject {
 	///    - text: Task text
 	///    - completionHandler: Completion handler
 	func createTask(withText text: String, completionHandler: (UUID) -> Void)
+
+	func deleteTasks(_ ids: Set<UUID>)
 }
 
 /// `List` unit interactor
@@ -53,6 +55,12 @@ extension ListInteractor: ListUnitInteractor {
 			state.tasks.append(new)
 		}
 		completionHandler(new.id)
+	}
+
+	func deleteTasks(_ ids: Set<UUID>) {
+		storage.modificate { state in
+			state.tasks.removeAll(where: \.id, containedIn: ids)
+		}
 	}
 }
 

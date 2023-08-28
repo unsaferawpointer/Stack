@@ -20,3 +20,19 @@ extension Collection {
 		}
 	}
 }
+
+extension Collection where Self: MutableCollection & RangeReplaceableCollection {
+
+	mutating func removeAll<T: Equatable>(where keyPath: KeyPath<Element, T>, equalsTo value: T) {
+		removeAll { element in
+			element[keyPath: keyPath] == value
+		}
+	}
+
+	mutating func removeAll<T: Hashable, S: Sequence>(where keyPath: KeyPath<Element, T>, containedIn sequence: S) where S.Element == T {
+		removeAll { element in
+			let value = element[keyPath: keyPath]
+			return sequence.contains(value)
+		}
+	}
+}

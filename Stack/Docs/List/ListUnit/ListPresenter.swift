@@ -73,9 +73,25 @@ private extension ListPresenter {
 				id: item.id,
 				text: item.text,
 				isDone: false,
-				isUrgent: item.category.contains(.urgent)
+				isUrgent: item.category.contains(.urgent),
+				menu: makeMenu(forTask: item.id)
 			)
 		}
 		return ListUnitModel(items: items)
+	}
+
+	func makeMenu(forTask id: UUID) -> MenuConfiguration {
+		return MenuConfiguration(items: [])
+			.addItem(localization.deleteMenuItemTitle, iconName: "trash") { [weak self] in
+				guard let self, let view = self.view else {
+					return
+				}
+				let selected = view.selectedIdentifiers()
+				guard selected.contains(id) else {
+					self.interactor?.deleteTasks([id])
+					return
+				}
+				self.interactor?.deleteTasks(selected)
+			}
 	}
 }

@@ -18,6 +18,10 @@ extension ListLocalizationMock: ListUnitLocalization {
 	var defaultTaskText: String {
 		stubs.defaultTaskText
 	}
+
+	var deleteMenuItemTitle: String {
+		stubs.deleteMenuItemTitle
+	}
 }
 
 // MARK: - Nested data structs
@@ -25,5 +29,6 @@ extension ListLocalizationMock {
 
 	struct Stubs {
 		var defaultTaskText: String = .random
+		var deleteMenuItemTitle: String = .random
 	}
 }

@@ -102,6 +102,11 @@
 		4CBCF2A42A99121C004E62C9 /* MenuButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */; };
 		4CBCF2A62A9912BF004E62C9 /* HeaderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCF2A52A9912BF004E62C9 /* HeaderConfiguration.swift */; };
 		4CDCFE452A9BA66B00E072F4 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE442A9BA66B00E072F4 /* TaskStatus.swift */; };
+		4CDCFE482A9BDD6C00E072F4 /* ConfigurableMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE472A9BDD6C00E072F4 /* ConfigurableMenu.swift */; };
+		4CDCFE4A2A9BDDBE00E072F4 /* MenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE492A9BDDBE00E072F4 /* MenuConfiguration.swift */; };
+		4CDCFE4E2A9BDE3A00E072F4 /* MenuItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE4D2A9BDE3A00E072F4 /* MenuItemConfiguration.swift */; };
+		4CDCFE502A9BDF8200E072F4 /* ConfigurableMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE4F2A9BDF8200E072F4 /* ConfigurableMenuItem.swift */; };
+		4CDCFE522A9BDFB800E072F4 /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCFE512A9BDFB800E072F4 /* NSImage+Extension.swift */; };
 		4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */; };
 		4CF80C832A909D3400E985A5 /* BoardLocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */; };
 		4CF80C862A90AF8200E985A5 /* BoardLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */; };
@@ -224,6 +229,11 @@
 		4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonConfiguration.swift; sourceTree = "<group>"; };
 		4CBCF2A52A9912BF004E62C9 /* HeaderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConfiguration.swift; sourceTree = "<group>"; };
 		4CDCFE442A9BA66B00E072F4 /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
+		4CDCFE472A9BDD6C00E072F4 /* ConfigurableMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableMenu.swift; sourceTree = "<group>"; };
+		4CDCFE492A9BDDBE00E072F4 /* MenuConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConfiguration.swift; sourceTree = "<group>"; };
+		4CDCFE4D2A9BDE3A00E072F4 /* MenuItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemConfiguration.swift; sourceTree = "<group>"; };
+		4CDCFE4F2A9BDF8200E072F4 /* ConfigurableMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableMenuItem.swift; sourceTree = "<group>"; };
+		4CDCFE512A9BDFB800E072F4 /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		4CF80C802A9094CE00E985A5 /* BoardLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalization.swift; sourceTree = "<group>"; };
 		4CF80C822A909D3400E985A5 /* BoardLocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalizationMock.swift; sourceTree = "<group>"; };
 		4CF80C852A90AF8200E985A5 /* BoardLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = BoardLocalizable.strings; sourceTree = "<group>"; };
@@ -458,6 +468,7 @@
 				4CBCF2942A98EFB8004E62C9 /* NSScrollView+Extension.swift */,
 				4CBCF2962A98F119004E62C9 /* NSButton+Extension.swift */,
 				4C4A34852A9A4C4E00594B94 /* NSTableView+Extension.swift */,
+				4CDCFE512A9BDFB800E072F4 /* NSImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -720,6 +731,7 @@
 		4CBCF29E2A990F6F004E62C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CDCFE462A9BDD5600E072F4 /* Menu */,
 				4C4A34992A9A7BCA00594B94 /* HStackView */,
 				4C4A34872A9A4C6E00594B94 /* TableItems */,
 				4CBCF2A22A991206004E62C9 /* MenuButton */,
@@ -744,6 +756,17 @@
 				4CBCF2A32A99121C004E62C9 /* MenuButtonConfiguration.swift */,
 			);
 			path = MenuButton;
+			sourceTree = "<group>";
+		};
+		4CDCFE462A9BDD5600E072F4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4CDCFE472A9BDD6C00E072F4 /* ConfigurableMenu.swift */,
+				4CDCFE492A9BDDBE00E072F4 /* MenuConfiguration.swift */,
+				4CDCFE4D2A9BDE3A00E072F4 /* MenuItemConfiguration.swift */,
+				4CDCFE4F2A9BDF8200E072F4 /* ConfigurableMenuItem.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		4CF80C842A90AF6000E985A5 /* Localization */ = {
@@ -918,6 +941,7 @@
 				4CBCF2952A98EFB8004E62C9 /* NSScrollView+Extension.swift in Sources */,
 				4CB0642D2A9B4D860075DE4D /* Collection+Extension.swift in Sources */,
 				4CBCF2972A98F119004E62C9 /* NSButton+Extension.swift in Sources */,
+				4CDCFE4E2A9BDE3A00E072F4 /* MenuItemConfiguration.swift in Sources */,
 				4C1D14A32A8EB63B005691BD /* ColumnView.swift in Sources */,
 				4C4A348B2A9A598100594B94 /* ToggleCell.swift in Sources */,
 				4C0C5C2F2A877E860025B3C8 /* BoardColumn.swift in Sources */,
@@ -926,6 +950,7 @@
 				4C4A344B2A991FEB00594B94 /* ListUnitModel.swift in Sources */,
 				4C0C5C512A881FCE0025B3C8 /* DocumentError.swift in Sources */,
 				4C1D14942A8D5514005691BD /* BoardPresenter.swift in Sources */,
+				4CDCFE4A2A9BDDBE00E072F4 /* MenuConfiguration.swift in Sources */,
 				4C0C5C312A877E950025B3C8 /* Card.swift in Sources */,
 				4C1D14AE2A8F459F005691BD /* BoardUnitAssembly.swift in Sources */,
 				4C4A34892A9A4C7A00594B94 /* TextFieldCell.swift in Sources */,
@@ -942,6 +967,8 @@
 				4C4A34402A991E8100594B94 /* ListViewController.swift in Sources */,
 				4C4A343E2A991E5C00594B94 /* ListUnitAssembly.swift in Sources */,
 				4C8644BF2A82B42C00184C1B /* AppDelegate.swift in Sources */,
+				4CDCFE482A9BDD6C00E072F4 /* ConfigurableMenu.swift in Sources */,
+				4CDCFE502A9BDF8200E072F4 /* ConfigurableMenuItem.swift in Sources */,
 				4C4A34262A9916C900594B94 /* ListDocument.swift in Sources */,
 				4CF80C812A9094CE00E985A5 /* BoardLocalization.swift in Sources */,
 				4C0C5C472A87CFA70025B3C8 /* BoardDataProvider.swift in Sources */,
@@ -956,6 +983,7 @@
 				4CB0642F2A9B60280075DE4D /* DataSnapshot.swift in Sources */,
 				4C05C1432A8A7F0700AF6036 /* Category.swift in Sources */,
 				4CBCF2A42A99121C004E62C9 /* MenuButtonConfiguration.swift in Sources */,
+				4CDCFE522A9BDFB800E072F4 /* NSImage+Extension.swift in Sources */,
 				4C8644C32A82B42C00184C1B /* BoardDocument.swift in Sources */,
 				4C05C1552A8D35EC00AF6036 /* DocumentDataPublisher.swift in Sources */,
 				4C4A34242A9915B900594B94 /* TaskItem.swift in Sources */,

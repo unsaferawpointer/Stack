@@ -27,6 +27,10 @@ extension ListInteractorMock: ListUnitInteractor {
 		invocations.append(.createTask(text: text))
 		completionHandler(stubs.createdTaskIdentifier)
 	}
+
+	func deleteTasks(_ ids: Set<UUID>) {
+		invocations.append(.deleteTasks(ids: ids))
+	}
 }
 
 // MARK: - Nested data structs
@@ -35,6 +39,7 @@ extension ListInteractorMock {
 	enum Action {
 		case fetchData
 		case createTask(text: String)
+		case deleteTasks(ids: Set<UUID>)
 	}
 
 	struct Stubs {

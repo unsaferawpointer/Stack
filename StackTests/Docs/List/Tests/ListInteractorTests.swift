@@ -68,6 +68,23 @@ extension ListInteractorTests {
 		XCTAssertEqual(storage.stubs.modificated.tasks.count, 1)
 		XCTAssertEqual(storage.invocations, [.modificate])
 	}
+
+	func test_deleteTasks() throws {
+		// Arrange
+		let taskItem0 = TaskItem(text: .random)
+		let taskItem1 = TaskItem(text: .random)
+		let taskItem2 = TaskItem(text: .random)
+
+		storage.stubs.modificated = .init(id: .init(), tasks: [taskItem0, taskItem1, taskItem2])
+		storage.invocations.removeAll()
+
+		// Act
+		sut.deleteTasks(Set([taskItem0.id, taskItem2.id]))
+
+		// Assert
+		XCTAssertEqual(storage.stubs.modificated.tasks.count, 1)
+		XCTAssertEqual(storage.invocations, [.modificate])
+	}
 }
 
 // MARK: - Common cases

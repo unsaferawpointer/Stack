@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import DesignSystem
 
 /// Table adapter
 final class TableAdapter: NSObject {
@@ -15,6 +16,12 @@ final class TableAdapter: NSObject {
 	var snapshot: DataSnapshot<Model> = .empty
 
 	weak var table: NSTableView?
+
+	lazy var menu: ConfigurableMenu = {
+		let menu = ConfigurableMenu(configuration: .init(items: []))
+		menu.delegate = self
+		return menu
+	}()
 
 	// MARK: - Initialization
 
@@ -27,6 +34,7 @@ final class TableAdapter: NSObject {
 		super.init()
 		self.table?.delegate = self
 		self.table?.dataSource = self
+		self.table?.menu = menu
 	}
 }
 
@@ -134,6 +142,13 @@ extension TableAdapter {
 		}
 	}
 
+	func selectedIdentifiers() -> Set<UUID> {
+		guard let selection = table?.selectedRowIndexes else {
+			return []
+		}
+		return snapshot.identifiers(for: selection)
+	}
+
 	func performAnimation(_ new: DataSnapshot<Model>) {
 
 		guard let table else {
@@ -157,6 +172,18 @@ extension TableAdapter {
 
 		let selectedRows = snapshot.indexes(for: selected)
 		table.selectRowIndexes(selectedRows, byExtendingSelection: false)
+	}
+}
+
+// MARK: - NSMenuDelegate
+extension TableAdapter: NSMenuDelegate {
+
+	func menuNeedsUpdate(_ menu: NSMenu) {
+		guard let clickedRow = table?.clickedRow, clickedRow != -1 else {
+			self.menu.configuration = .init(items: [])
+			return
+		}
+		self.menu.configuration = snapshot.items[clickedRow].menu!
 	}
 }
 

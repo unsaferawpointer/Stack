@@ -11,6 +11,8 @@ import Foundation
 protocol ListUnitLocalization {
 
 	var defaultTaskText: String { get }
+
+	var deleteMenuItemTitle: String { get }
 }
 
 /// List Unit localization
@@ -21,6 +23,10 @@ extension ListLocalization: ListUnitLocalization {
 
 	var defaultTaskText: String {
 		return "default_task_text".localized()
+	}
+
+	var deleteMenuItemTitle: String {
+		return "delete_menu_item_title".localized()
 	}
 }
 

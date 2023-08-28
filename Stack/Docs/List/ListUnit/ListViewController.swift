@@ -27,6 +27,9 @@ protocol ListView {
 
 	/// Scroll to specific identifier
 	func scrollTo(_ id: UUID)
+
+	/// Returns selected identifiers
+	func selectedIdentifiers() -> Set<UUID>
 }
 
 class ListViewController: NSViewController {
@@ -86,6 +89,10 @@ class ListViewController: NSViewController {
 
 // MARK: - ListView
 extension ListViewController: ListView {
+
+	func selectedIdentifiers() -> Set<UUID> {
+		return adapter?.selectedIdentifiers() ?? .init()
+	}
 
 	func display(_ model: ListUnitModel) {
 		let snapshot = DataSnapshot(items: model.items)

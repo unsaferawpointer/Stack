@@ -7,3 +7,4 @@
 */
 
 "default_task_text" = "New task";
+"delete_menu_item_title" = "Delete";

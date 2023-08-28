@@ -27,6 +27,8 @@ extension ListUnitModel {
 		var isDone: Bool
 
 		var isUrgent: Bool
+
+		var menu: MenuConfiguration?
 	}
 }
 
